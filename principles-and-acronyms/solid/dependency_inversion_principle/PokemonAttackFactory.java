@@ -4,8 +4,13 @@ public class PokemonAttackFactory {
         PokemonAttack pokemon;
         switch (pokemonName.toLowerCase()) {
             case "pikachu":
-                pokemon = new Pikachu();
+                pokemon = (PokemonAttack) new Pikachu();
+                break;
+            default:
+                pokemon = (PokemonAttack) new Pikachu();
+                break;
         }
+        return pokemon;
 
     }
 }
