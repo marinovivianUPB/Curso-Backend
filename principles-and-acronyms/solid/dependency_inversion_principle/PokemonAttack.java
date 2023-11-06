@@ -1,0 +1,3 @@
+interface PokemonAttack {
+    void execute();
+}
