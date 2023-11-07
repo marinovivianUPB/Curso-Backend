@@ -9,13 +9,13 @@ Cumplir con el OCP nos ayuda a crear sistemas más mantenibles y escalables, red
 
 ## Ejemplo Violando el OCP
 
-Imagina que tienes una clase `Pokeball` que puede contener diferentes tipos de Pokémon. Cada vez que añades un nuevo tipo de Pokémon, tienes que modificar la clase `Pokeball` para manejar el nuevo tipo.
+Imagina que tienes una clase `ejemplo01.Pokeball` que puede contener diferentes tipos de Pokémon. Cada vez que añades un nuevo tipo de Pokémon, tienes que modificar la clase `ejemplo01.Pokeball` para manejar el nuevo tipo.
 
 ```java
-class Pokeball {
-    private Pokemon pokemon;
+class ejemplo01.Pokeball {
+    private ejemplo01.Pokemon pokemon;
 
-    public Pokeball(Pokemon pokemon) {
+    public ejemplo01.Pokeball(ejemplo01.Pokemon pokemon) {
         this.pokemon = pokemon;
     }
 
@@ -33,7 +33,7 @@ class Pokeball {
 Cada vez que se introduce un nuevo tipo de Pokémon, el método catchAction() tiene que modificarse, lo cual viola el OCP.
 
 Aplicando el OCP
-Podemos aplicar el OCP haciendo que Pokeball dependa de una abstracción en lugar de los detalles concretos de cada Pokémon.
+Podemos aplicar el OCP haciendo que ejemplo01.Pokeball dependa de una abstracción en lugar de los detalles concretos de cada Pokémon.
 
 ```java
 interface Catchable {
@@ -52,10 +52,10 @@ class Charmander implements Catchable {
     }
 }
 
-class Pokeball {
+class ejemplo01.Pokeball {
     private Catchable pokemon;
 
-    public Pokeball(Catchable pokemon) {
+    public ejemplo01.Pokeball(Catchable pokemon) {
         this.pokemon = pokemon;
     }
 
@@ -66,11 +66,11 @@ class Pokeball {
 
 ```
 
-Ahora, la clase Pokeball no necesita cambiar cada vez que se introduce un nuevo tipo de Pokémon. Simplemente creamos una nueva clase que implemente la interfaz Catchable y la pasamos a la Pokeball.
+Ahora, la clase ejemplo01.Pokeball no necesita cambiar cada vez que se introduce un nuevo tipo de Pokémon. Simplemente creamos una nueva clase que implemente la interfaz Catchable y la pasamos a la ejemplo01.Pokeball.
 
 ### Ejercicio
 - [ ] Crea una nueva clase de Pokémon que implemente la interfaz Catchable.
-- [ ] Añade una instancia de tu nuevo Pokémon a una Pokeball y demuestra que puedes llamar al método catchAction() sin modificar la clase Pokeball.
+- [ ] Añade una instancia de tu nuevo Pokémon a una ejemplo01.Pokeball y demuestra que puedes llamar al método catchAction() sin modificar la clase ejemplo01.Pokeball.
 
 ### Tarea 
 
@@ -88,7 +88,7 @@ Tu tarea es diseñar un modelo de software orientado a objetos para el sistema d
 ### Especificaciones de la Tarea
 - [ ] **Modelar una Clase Base de Teleférico:** Crea una clase abstracta que represente las funcionalidades comunes de una línea de teleférico, como iniciar el recorrido, detenerse en estaciones y finalizar el recorrido.
 
-- [ ] **Implementar Clases Específicas de Línea:** Diseña clases que hereden de la clase base del teleférico y que representen líneas específicas del teleférico de La Paz (por ejemplo, la Línea Roja, la Línea Azul, etc.). Cada una debe ser capaz de operar de forma independiente siguiendo un itinerario específico.
+- [ ] **Implementar Clases Específicas de Línea:** Diseña clases que hereden de la clase base del teleférico y que representen líneas específicas del teleférico de La Paz (por tarea, la Línea Roja, la Línea Azul, etc.). Cada una debe ser capaz de operar de forma independiente siguiendo un itinerario específico.
 
 - [ ] **Asegurar la Extensibilidad:** Debe ser posible añadir nuevas líneas al sistema (como la futura Línea Dorada) creando una nueva clase que herede de la clase base sin modificar las clases existentes.
 

@@ -65,7 +65,7 @@ curso-backend/
    git pull origin master
    ```
 
-4. **Practicar y Experimentar**: Te animamos a crear tus propias ramas para experimentar y practicar. Por ejemplo, podrías crear una rama llamada `practica-clase01` para la primera clase.
+4. **Practicar y Experimentar**: Te animamos a crear tus propias ramas para experimentar y practicar. Por tarea, podrías crear una rama llamada `practica-clase01` para la primera clase.
    ```sh
    git checkout -b practica-clase01
    ```

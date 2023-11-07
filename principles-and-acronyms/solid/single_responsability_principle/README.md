@@ -10,12 +10,12 @@ Imagina que en el mundo Pokémon, un solo Pokémon tratara de hacerlo todo: luch
 
 ## Ejemplo con Pokémon
 
-Supongamos que estamos creando un juego de Pokémon y tenemos una clase `Pokemon`. Sin el SRP, nuestra clase podría verse sobrecargada con múltiples métodos que no están relacionados directamente con las características esenciales de un Pokémon.
+Supongamos que estamos creando un juego de Pokémon y tenemos una clase `ejemplo01.Pokemon`. Sin el SRP, nuestra clase podría verse sobrecargada con múltiples métodos que no están relacionados directamente con las características esenciales de un Pokémon.
 
 ### Antes de aplicar el SRP
 
 ```java
-class Pokemon {
+class ejemplo01.Pokemon {
     private String name;
     private String type;
     // Constructor, getters y setters
@@ -38,12 +38,12 @@ class Pokemon {
 }
 ```
 
-En el ejemplo anterior, nuestra clase Pokemon hace demasiadas cosas. Veamos cómo podríamos aplicar el SRP para mejorar el diseño de nuestra clase.
+En el tarea anterior, nuestra clase ejemplo01.Pokemon hace demasiadas cosas. Veamos cómo podríamos aplicar el SRP para mejorar el diseño de nuestra clase.
 
 Después de aplicar el SRP
 Refactorizamos el código creando interfaces y clases que se responsabilizan de una sola acción.
 ```java 
-class Pokemon {
+class ejemplo01.Pokemon {
     private String name;
     private String type;
     // Constructor, getters y setters

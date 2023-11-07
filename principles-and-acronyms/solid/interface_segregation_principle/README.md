@@ -6,19 +6,19 @@ El Principio de Segregación de Interfaces (ISP) establece que ningún cliente d
 
 ## Problema con el Código Existente
 
-Imaginemos que tenemos una interfaz `Pokemon` que declara métodos para diversas acciones que pueden realizar los Pokémon, tales como `attack()`, `defend()`, `run()`, y `heal()`. No todos los Pokémon pueden realizar todas estas acciones. Por ejemplo, algunos Pokémon no tienen habilidades de curación.
+Imaginemos que tenemos una interfaz `ejemplo01.Pokemon` que declara métodos para diversas acciones que pueden realizar los Pokémon, tales como `attack()`, `defend()`, `run()`, y `heal()`. No todos los Pokémon pueden realizar todas estas acciones. Por tarea, algunos Pokémon no tienen habilidades de curación.
 
 Si usamos una interfaz monolítica, tendríamos algo como esto:
 
 ```java
-interface Pokemon {
+interface ejemplo01.Pokemon {
     void attack();
     void defend();
     void run();
     void heal();
 }
 
-class Pikachu implements Pokemon {
+class Pikachu implements ejemplo01.Pokemon {
     public void attack() {
         // Pikachu ataca
     }
@@ -41,7 +41,7 @@ class Pikachu implements Pokemon {
 Este enfoque viola el ISP ya que Pikachu está forzado a implementar heal() aunque no lo necesite.
 
 Aplicando el ISP
-Para cumplir con el ISP, debemos segregar la interfaz Pokemon en interfaces más pequeñas y específicas.
+Para cumplir con el ISP, debemos segregar la interfaz ejemplo01.Pokemon en interfaces más pequeñas y específicas.
 
 ```java
 

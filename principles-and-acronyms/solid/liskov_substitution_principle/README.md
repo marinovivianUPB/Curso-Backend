@@ -6,20 +6,22 @@ El Principio de Sustitución de Liskov es uno de los cinco principios SOLID del 
 
 ## Ejemplo
 
-Imagina un programa simple donde los entrenadores Pokémon pueden usar diferentes tipos de Pokébolas para atrapar Pokémons. Para adherir al LSP, deberíamos ser capaces de reemplazar cualquier `Pokeball` con una subclase de `Pokeball` (como `GreatBall` o `UltraBall`) sin cambiar el comportamiento esperado de atrapar Pokémon.
+Imagina un programa simple donde los entrenadores Pokémon pueden usar diferentes tipos de Pokébolas para atrapar Pokémons. Para adherir al LSP, deberíamos ser capaces de reemplazar cualquier `ejemplo01.Pokeball` con una subclase de `ejemplo01.Pokeball` (como `ejemplo01.GreatBall` o `ejemplo01.UltraBall`) sin cambiar el comportamiento esperado de atrapar Pokémon.
 
 ### Ejemplo de Violación
 
-Aquí hay un ejemplo donde se viola el LSP:
+Aquí hay un tarea donde se viola el LSP:
 
 ```java
+import ejemplo01.Pokemon;
+
 class Pokeball {
     public void catchPokemon(Pokemon pokemon) {
         System.out.println("¡Atrapaste a " + pokemon.getName() + "!");
     }
 }
 
-class MasterBall extends Pokeball {
+class MasterBall extends ejemplo01.Pokeball {
     @Override
     public void catchPokemon(Pokemon pokemon) {
         if (pokemon.isLegendary()) {
@@ -30,13 +32,15 @@ class MasterBall extends Pokeball {
     }
 }
 ```
-Usar una MasterBall en lugar de una Pokeball podría lanzar una excepción, lo cual no es un comportamiento esperado y por lo tanto viola el LSP.
+Usar una MasterBall en lugar de una ejemplo01.Pokeball podría lanzar una excepción, lo cual no es un comportamiento esperado y por lo tanto viola el LSP.
 
 ### Ejemplo Cumpliendo con LSP
 
 Ahora, refactorizamos el código para cumplir con el LSP:
 
 ```java 
+import ejemplo01.Pokemon;
+
 class Pokeball {
     public boolean catchPokemon(Pokemon pokemon) {
         System.out.println("¡Atrapaste a " + pokemon.getName() + "!");
@@ -44,7 +48,7 @@ class Pokeball {
     }
 }
 
-class MasterBall extends Pokeball {
+class MasterBall extends ejemplo01.Pokeball {
     @Override
     public boolean catchPokemon(Pokemon pokemon) {
         // MasterBall puede atrapar cualquier Pokémon sin fallar
@@ -55,7 +59,7 @@ class MasterBall extends Pokeball {
 
 ```
 
-En esta versión refactorizada, la MasterBall puede ser utilizada dondequiera que se espera una Pokeball, sin lanzar excepciones o alterar el comportamiento esperado.
+En esta versión refactorizada, la MasterBall puede ser utilizada dondequiera que se espera una ejemplo01.Pokeball, sin lanzar excepciones o alterar el comportamiento esperado.
 
 ## Ejercicios 
 
@@ -66,6 +70,8 @@ Imagina que tienes la siguiente jerarquía de clases de Pokébolas, donde cada u
 ### Código Inicial
 
 ```java
+import ejemplo01.Pokemon;
+
 class Pokeball {
     public void catchPokemon(Pokemon pokemon) {
         System.out.println("Intentas atrapar a " + pokemon.getName());
@@ -73,24 +79,24 @@ class Pokeball {
     }
 }
 
-class GreatBall extends Pokeball {
+class GreatBall extends ejemplo01.Pokeball {
     @Override
     public void catchPokemon(Pokemon pokemon) {
         if (pokemon.getEscapeProbability() < 0.5) {
-            System.out.println(pokemon.getName() + " fue atrapado con una GreatBall!");
+            System.out.println(pokemon.getName() + " fue atrapado con una ejemplo01.GreatBall!");
         } else {
-            System.out.println(pokemon.getName() + " escapó de la GreatBall.");
+            System.out.println(pokemon.getName() + " escapó de la ejemplo01.GreatBall.");
         }
     }
 }
 
-class UltraBall extends Pokeball {
+class UltraBall extends ejemplo01.Pokeball {
     @Override
     public void catchPokemon(Pokemon pokemon) {
         if (pokemon.getEscapeProbability() < 0.2) {
-            System.out.println(pokemon.getName() + " fue atrapado con una UltraBall!");
+            System.out.println(pokemon.getName() + " fue atrapado con una ejemplo01.UltraBall!");
         } else {
-            System.out.println(pokemon.getName() + " escapó de la UltraBall.");
+            System.out.println(pokemon.getName() + " escapó de la ejemplo01.UltraBall.");
         }
     }
 }

@@ -37,7 +37,7 @@ Este módulo cubre los principios y acrónimos esenciales que todos los desarrol
 
 ## KISS (Keep It Simple, Stupid)
 - **Concepto**: La simplicidad debe ser una meta clave en el diseño, y se debe evitar la complejidad innecesaria.
-- **Aplicación en Java/Node.js**: Refactorización de un ejemplo complejo a una solución más simple que realiza la misma tarea.
+- **Aplicación en Java/Node.js**: Refactorización de un tarea complejo a una solución más simple que realiza la misma tarea.
 
 ## DRY (Don't Repeat Yourself)
 - **Concepto**: Cada pieza de conocimiento o lógica debe tener una única representación en el código.
