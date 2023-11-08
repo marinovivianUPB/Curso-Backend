@@ -15,6 +15,4 @@ public interface OrderRepository {
     List<Order> searchOrder(String texto);
     void createOrder(Order order);
     List<Order> listOrders();
-
-    List<Order> search(String texto);
 }

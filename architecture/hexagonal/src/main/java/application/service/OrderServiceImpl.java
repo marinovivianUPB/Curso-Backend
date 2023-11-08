@@ -1,7 +1,10 @@
 package application.service;
 
+import application.model.Order;
 import application.ports.in.OrderService;
 import application.ports.out.OrderRepository;
+
+import java.util.List;
 
 public class OrderServiceImpl implements OrderService {
 
@@ -18,12 +21,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order searchOrderById(String id){
-        return orderRepository.searchById(id);
+        return orderRepository.searchOrderById(id);
     }
 
     @Override
     public List<Order> searchOrder(String texto) {
-        return orderRepository.search(texto)
+        return orderRepository.search(texto);
     }
 
     @Override

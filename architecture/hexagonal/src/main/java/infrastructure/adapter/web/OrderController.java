@@ -2,6 +2,9 @@ package infrastructure.adapter.web;
 
 import application.ports.in.OrderService;
 import application.model.Order;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
@@ -21,5 +24,20 @@ public class OrderController {
     @GetMapping
     public ResponseEntity<List<Order>> listOrders() {
         return ResponseEntity.ok(orderService.listOrders());
+    }
+
+    @GetMapping
+    public ResponseEntity<Order> getOrderById(String id) {
+        return ResponseEntity.ok(orderService.searchOrderById(id));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Order>> getOrders(String texto) {
+        return ResponseEntity.ok(orderService.searchOrder(texto));
+    }
+
+    @PutMapping
+    public ResponseEntity<Integer> buyOrder(int cantidad){
+        return ResponseEntity.ok(orderService.buyOrder(cantidad));
     }
 }
