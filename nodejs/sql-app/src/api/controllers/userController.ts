@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express';
 import { UserService } from '../../app/services/userService';
 import { UserDto } from '../../app/dtos/user.dto';
 import { CreateUserDTO } from '../../app/dtos/create.user.dto';
+import logger from '../../infrastructure/logger/logger';
 
 export class UserController {
     public router: Router;
@@ -15,9 +16,9 @@ export class UserController {
     }
 
     public async getUserById(req: Request, res: Response): Promise<void> {
+        logger.info("Dentro de user by id controller");
         const { id } = req.params;
         const userDto = await this.userService.getUserById(id);
-
         if (!userDto) {
             res.status(404).json({ message: 'User not found' });
             return;

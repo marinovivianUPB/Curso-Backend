@@ -20,7 +20,7 @@ export class UserService {
         return userResponse;
     }
 
-    async createUser(userDto: CreateUserDTO): Promise<User> {
+    async createUser(userDto: CreateUserDTO): Promise<UserDto> {
         const userEntity: IUserEntity = {
             username: userDto.username,
             email: userDto.email,
@@ -30,6 +30,7 @@ export class UserService {
             lastLogin: null,
         };
         const newUser = new User(userEntity);
-        return this.userRepository.createUser(newUser);
+        const responseUser = await this.userRepository.createUser(newUser);
+        return {id: responseUser.id, username: responseUser.username, email: responseUser.email, lastLogin: responseUser.lastLogin};
     }
 }
