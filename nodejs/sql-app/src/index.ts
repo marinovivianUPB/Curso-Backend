@@ -5,11 +5,15 @@ import { UserRepositoryImpl } from './infrastructure/repositories/userRepository
 import { UserController } from './api/controllers/userController';
 import morgan from "morgan";
 import logger from "./infrastructure/logger/logger";
+import dotenv from 'dotenv';
+import {env} from "./infrastructure/config/config";
 
 AppDataSource.initialize().then(() => {
     const app = express();
-
-    const PORT = 3000;
+    dotenv.config();
+     
+    const PORT = env.port;
+    console.log(PORT);
     app.use(express.json());
 
     app.get('/', (req: Request, res: Response) => {
