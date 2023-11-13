@@ -7,6 +7,9 @@ import morgan from "morgan";
 import logger from "./infrastructure/logger/logger";
 import dotenv from 'dotenv';
 import {env} from "./infrastructure/config/config";
+import { RoleRepositoryImpl } from './infrastructure/repositories/roleRepositoryImpl';
+import { RoleService } from './app/services/roleService';
+import { RoleController } from './api/controllers/roleController';
 
 AppDataSource.initialize().then(() => {
     const app = express();
@@ -25,6 +28,12 @@ AppDataSource.initialize().then(() => {
     const userController = new UserController(userService);
 
     app.use('/users', userController.router);
+
+    const roleRepository = new RoleRepositoryImpl();
+    const roleService = new RoleService(roleRepository);
+    const roleController = new RoleController(roleService);
+
+    app.use('/roles', roleController.router);
 
     app.use(
         morgan("combined", {
