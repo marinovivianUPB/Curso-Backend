@@ -3,6 +3,7 @@ import { UserService } from '../../app/services/userService';
 import { UserDto } from '../../app/dtos/user.dto';
 import { CreateUserDTO } from '../../app/dtos/create.user.dto';
 import logger from '../../infrastructure/logger/logger';
+import { UpdateUserDTO } from '../../app/dtos/update.user.dto';
 
 export class UserController {
     public router: Router;
@@ -32,7 +33,7 @@ export class UserController {
     }
 
     public async createUser(req: Request, res: Response): Promise<Response> {
-        logger.info("Dentro de create cuser controller");
+        logger.info("Dentro de create user controller");
         try {
             const userDto: CreateUserDTO = req.body;
             const user = await this.userService.createUser(userDto);
@@ -45,8 +46,41 @@ export class UserController {
         }
     }
 
+    public async updateUser(req: Request, res: Response): Promise<Response> {
+        logger.info("Dentro de update user controller");
+        try {
+            const { id } = req.params;
+            const userDto: UpdateUserDTO = req.body;
+            const user = await this.userService.updateUser(userDto, id);
+            logger.debug(`Usuario enviado por userService ${JSON.stringify(user)}`)
+            return res.status(201).json(user);
+        } catch (error) {
+            logger.error("Error al actualizar usuario: "+error, req.body);
+            console.log(error);
+            return res.status(400).json({ message: error });
+        }
+    }
+
+    public async deleteUser(req: Request, res: Response): Promise<void> {
+        logger.info("Dentro de delete user by id controller");
+        const { id } = req.params;
+        const userDto = await this.userService.deleteUser(id);
+        
+        if (!userDto) {
+            logger.error("Error al eliminar usuario", req.params);
+            res.status(404).json({ message: 'User not deleted' });
+            return;
+        }else{
+            logger.debug(`Usuario enviado por userService ${JSON.stringify(userDto)}`)
+        }
+
+        res.json(userDto);
+    }
+
     public routes() {
         this.router.get('/:id', this.getUserById.bind(this));
         this.router.post('/', this.createUser.bind(this));
+        this.router.put('/:id', this.updateUser.bind(this));
+        this.router.delete('/:id', this.deleteUser.bind(this));
     }
 }
