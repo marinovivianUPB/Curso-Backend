@@ -1,11 +1,12 @@
 import winston from 'winston';
+import {log} from "../config/config"
 
 const myFormat = winston.format.printf(({ level, message, timestamp }) => {
     return `${level}:[${timestamp}] ${message}`;
 });
 
 const logger = winston.createLogger({
-    level: 'info', //aqui activamos modo debug
+    level: log.level, //aqui activamos modo debug
     format: winston.format.combine(
         winston.format.timestamp({ format: "DD/MMM/YYYY:HH:mm:ss ZZ" }),
         myFormat

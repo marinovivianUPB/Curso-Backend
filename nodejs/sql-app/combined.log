@@ -1,2 +1,19 @@
 {"level":"info","message":"Dentro de user by id controller"}
 info:[13/Nov/2023:12:55:12 -0400] Dentro de user by id controller
+info:[13/Nov/2023:14:00:09 -0400] Dentro de create cuser controller
+info:[13/Nov/2023:14:00:09 -0400] En create user service
+info:[13/Nov/2023:14:00:09 -0400] En create user repository
+debug:[13/Nov/2023:14:00:09 -0400] Respuesta de DB userEntity
+debug:[13/Nov/2023:14:00:09 -0400] Respuesta de DB userResponse
+debug:[13/Nov/2023:14:00:09 -0400] Usuario regresado por repository
+info:[13/Nov/2023:14:02:33 -0400] Dentro de create cuser controller
+info:[13/Nov/2023:14:02:33 -0400] En create user service
+info:[13/Nov/2023:14:02:33 -0400] En create user repository
+debug:[13/Nov/2023:14:02:33 -0400] Respuesta de DB userEntity {"username":"pepe","email":"perez3@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T18:02:33.694Z","lastLogin":null,"roleId":69}
+debug:[13/Nov/2023:14:02:33 -0400] Respuesta de DB userResponse
+debug:[13/Nov/2023:14:02:33 -0400] Usuario regresado por repository
+info:[13/Nov/2023:14:10:35 -0400] Dentro de user by id controller
+info:[13/Nov/2023:14:10:35 -0400] En get user by id service
+debug:[13/Nov/2023:14:10:35 -0400] Respuesta de DB:{"id":"d21d27de-a9dc-400c-977f-73b4a5c1c038","username":"pepe","email":"perez3@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T18:02:34.000Z","lastLogin":null,"roleId":"69"}
+debug:[13/Nov/2023:14:10:35 -0400] Usuario regresado por repository {"id":"d21d27de-a9dc-400c-977f-73b4a5c1c038","username":"pepe","email":"perez3@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T18:02:34.000Z","lastLogin":null,"roleId":"69"}
+debug:[13/Nov/2023:14:10:35 -0400] Usuario enviado por userService {"id":"d21d27de-a9dc-400c-977f-73b4a5c1c038","username":"pepe","email":"perez3@gmail.com","lastLogin":null}

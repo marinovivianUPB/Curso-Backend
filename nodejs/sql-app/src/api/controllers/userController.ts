@@ -19,20 +19,27 @@ export class UserController {
         logger.info("Dentro de user by id controller");
         const { id } = req.params;
         const userDto = await this.userService.getUserById(id);
+        
         if (!userDto) {
+            logger.error("Error al conseguir usuario", req.params);
             res.status(404).json({ message: 'User not found' });
             return;
+        }else{
+            logger.debug(`Usuario enviado por userService ${JSON.stringify(userDto)}`)
         }
 
         res.json(userDto);
     }
 
     public async createUser(req: Request, res: Response): Promise<Response> {
+        logger.info("Dentro de create cuser controller");
         try {
             const userDto: CreateUserDTO = req.body;
             const user = await this.userService.createUser(userDto);
+            logger.debug(`Usuario enviado por userService ${JSON.stringify(user)}`)
             return res.status(201).json(user);
         } catch (error) {
+            logger.error("Error al crear usuario: "+error, req.body);
             console.log(error);
             return res.status(400).json({ message: error });
         }
