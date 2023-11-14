@@ -17,3 +17,229 @@ info:[13/Nov/2023:14:10:35 -0400] En get user by id service
 debug:[13/Nov/2023:14:10:35 -0400] Respuesta de DB:{"id":"d21d27de-a9dc-400c-977f-73b4a5c1c038","username":"pepe","email":"perez3@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T18:02:34.000Z","lastLogin":null,"roleId":"69"}
 debug:[13/Nov/2023:14:10:35 -0400] Usuario regresado por repository {"id":"d21d27de-a9dc-400c-977f-73b4a5c1c038","username":"pepe","email":"perez3@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T18:02:34.000Z","lastLogin":null,"roleId":"69"}
 debug:[13/Nov/2023:14:10:35 -0400] Usuario enviado por userService {"id":"d21d27de-a9dc-400c-977f-73b4a5c1c038","username":"pepe","email":"perez3@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:05:04 -0400] Dentro de create user controller
+info:[14/Nov/2023:12:05:04 -0400] En create user service
+info:[14/Nov/2023:12:05:04 -0400] En create user repository
+debug:[14/Nov/2023:12:05:04 -0400] Respuesta de DB userEntity {"username":"pepe","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:04.565Z","lastLogin":null,"roleId":69}
+debug:[14/Nov/2023:12:05:04 -0400] Respuesta de DB userResponse {"username":"pepe","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:04.565Z","lastLogin":null,"roleId":69,"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3"}
+debug:[14/Nov/2023:12:05:04 -0400] Create user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"pepe","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:04.565Z","lastLogin":null,"roleId":69}
+debug:[14/Nov/2023:12:05:04 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"pepe","email":"perez4@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:06:13 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:06:13 -0400] En update user service
+info:[14/Nov/2023:12:06:13 -0400] En find by id user repository
+debug:[14/Nov/2023:12:06:13 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"pepe","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:13 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"pepe","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:06:13 -0400] En update user repository
+debug:[14/Nov/2023:12:06:13 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:06:13 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"pepe","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:13 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"pepe","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:13 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"pepe","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:06:17 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:06:17 -0400] En update user service
+info:[14/Nov/2023:12:06:17 -0400] En find by id user repository
+debug:[14/Nov/2023:12:06:17 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:17 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:06:17 -0400] En update user repository
+debug:[14/Nov/2023:12:06:17 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:06:17 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:17 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:17 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:06:19 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:06:19 -0400] En update user service
+info:[14/Nov/2023:12:06:19 -0400] En find by id user repository
+debug:[14/Nov/2023:12:06:19 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:19 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:06:19 -0400] En update user repository
+debug:[14/Nov/2023:12:06:19 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:06:19 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:19 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:19 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:06:19 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:06:19 -0400] En update user service
+info:[14/Nov/2023:12:06:19 -0400] En find by id user repository
+debug:[14/Nov/2023:12:06:19 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:19 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:06:19 -0400] En update user repository
+debug:[14/Nov/2023:12:06:19 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:06:19 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:19 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:19 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:06:20 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:06:20 -0400] En update user service
+info:[14/Nov/2023:12:06:20 -0400] En find by id user repository
+debug:[14/Nov/2023:12:06:20 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:20 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:06:20 -0400] En update user repository
+debug:[14/Nov/2023:12:06:20 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:06:20 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:20 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:20 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:06:45 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:06:45 -0400] En update user service
+info:[14/Nov/2023:12:06:45 -0400] En find by id user repository
+debug:[14/Nov/2023:12:06:45 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:45 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:06:45 -0400] En update user repository
+debug:[14/Nov/2023:12:06:45 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:06:45 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:45 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:45 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juancito","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:06:46 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:06:46 -0400] En update user service
+info:[14/Nov/2023:12:06:46 -0400] En find by id user repository
+debug:[14/Nov/2023:12:06:46 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:46 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:06:46 -0400] En update user repository
+debug:[14/Nov/2023:12:06:46 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:06:46 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:46 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:06:46 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:07:13 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:07:13 -0400] En update user service
+info:[14/Nov/2023:12:07:13 -0400] En find by id user repository
+debug:[14/Nov/2023:12:07:13 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:07:13 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:07:13 -0400] En update user repository
+debug:[14/Nov/2023:12:07:13 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:07:13 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:07:13 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:07:13 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:07:15 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:07:15 -0400] En update user service
+info:[14/Nov/2023:12:07:15 -0400] En find by id user repository
+debug:[14/Nov/2023:12:07:15 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez2","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:07:15 -0400] Update usr service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez2","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:07:15 -0400] En update user repository
+debug:[14/Nov/2023:12:07:15 -0400] Respuesta de DB userEntity {}
+debug:[14/Nov/2023:12:07:15 -0400] Respuesta de DB:{"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez2","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:07:15 -0400] Update user Service: Usuario regresado por repository {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez2","email":"perez1@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-13T16:42:36.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:07:15 -0400] Usuario enviado por userService {"id":"f25f9f9b-0af0-43b2-9952-428d7a803a9f","username":"juanPerez2","email":"perez1@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:08:45 -0400] Dentro de delete user by id controller
+info:[14/Nov/2023:12:08:45 -0400] En delete user by id service
+info:[14/Nov/2023:12:08:45 -0400] En delete user repository
+debug:[14/Nov/2023:12:08:45 -0400] Respuesta de DB:{"raw":[],"affected":1}
+debug:[14/Nov/2023:12:08:45 -0400] Delete usr service: Mensaje regresado por repository {"raw":[],"affected":1}
+debug:[14/Nov/2023:12:08:45 -0400] Usuario enviado por userService {"message":[]}
+info:[14/Nov/2023:12:08:52 -0400] Dentro de user by id controller
+info:[14/Nov/2023:12:08:52 -0400] En get user by id service
+info:[14/Nov/2023:12:08:52 -0400] En find by id user repository
+debug:[14/Nov/2023:12:08:52 -0400] Respuesta de DB:null
+error:[14/Nov/2023:12:08:52 -0400] Error al conseguir usuario
+info:[14/Nov/2023:12:14:04 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:14:04 -0400] En update user service
+info:[14/Nov/2023:12:14:04 -0400] En find by id user repository
+debug:[14/Nov/2023:12:14:04 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"pepe","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:14:04 -0400] Update usr service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"pepe","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:14:04 -0400] En update user repository
+debug:[14/Nov/2023:12:14:04 -0400] Respuesta de DB userEntity {"generatedMaps":[],"raw":[],"affected":1}
+debug:[14/Nov/2023:12:14:04 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez2","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:14:04 -0400] Update user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez2","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:14:04 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez2","email":"perez4@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:14:19 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:14:19 -0400] En update user service
+info:[14/Nov/2023:12:14:19 -0400] En find by id user repository
+debug:[14/Nov/2023:12:14:19 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez2","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:14:19 -0400] Update usr service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez2","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:14:19 -0400] En update user repository
+debug:[14/Nov/2023:12:14:19 -0400] Respuesta de DB userEntity {"generatedMaps":[],"raw":[],"affected":1}
+debug:[14/Nov/2023:12:14:19 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:14:19 -0400] Update user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:14:19 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez4@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:22:55 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:22:55 -0400] En update user service
+info:[14/Nov/2023:12:22:55 -0400] En find by id user repository
+debug:[14/Nov/2023:12:22:55 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:22:55 -0400] Update usr service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez4@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:22:55 -0400] En update user repository
+debug:[14/Nov/2023:12:22:55 -0400] Respuesta de DB userEntity {"generatedMaps":[],"raw":[],"affected":1}
+debug:[14/Nov/2023:12:22:55 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez14@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:22:55 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez14@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:22:55 -0400] Update user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez14@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:22:55 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez14@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:23:08 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:23:08 -0400] En update user service
+info:[14/Nov/2023:12:23:08 -0400] En find by id user repository
+debug:[14/Nov/2023:12:23:08 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez14@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:23:08 -0400] Update usr service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez4","email":"perez14@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+info:[14/Nov/2023:12:23:08 -0400] En update user repository
+debug:[14/Nov/2023:12:23:08 -0400] Respuesta de DB userEntity {"generatedMaps":[],"raw":[],"affected":1}
+debug:[14/Nov/2023:12:23:08 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:23:08 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:23:08 -0400] Update user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null,"roleId":"69"}
+debug:[14/Nov/2023:12:23:08 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:54:05 -0400] Dentro de create user controller
+info:[14/Nov/2023:12:54:05 -0400] En find by id role repository
+debug:[14/Nov/2023:12:54:05 -0400] Respuesta de DB:null
+error:[14/Nov/2023:12:54:05 -0400] Error al crear usuario: Error: Rol no encontrado
+info:[14/Nov/2023:12:55:45 -0400] Dentro de create user controller
+info:[14/Nov/2023:12:55:45 -0400] En find by id role repository
+debug:[14/Nov/2023:12:55:45 -0400] Respuesta de DB:null
+error:[14/Nov/2023:12:55:45 -0400] Error al crear usuario: Error: Rol no encontrado
+info:[14/Nov/2023:12:57:08 -0400] Dentro de create role controller
+info:[14/Nov/2023:12:57:08 -0400] En create role service
+info:[14/Nov/2023:12:57:08 -0400] En create role repository
+debug:[14/Nov/2023:12:57:08 -0400] Respuesta de DB roleEntity {"name":"students","description":"Estudiantes de Backend"}
+debug:[14/Nov/2023:12:57:09 -0400] Respuesta de DB roleResponse {"name":"students","description":"Estudiantes de Backend","id":"08a905ee-eb2f-4df2-8e80-9f9c70ea0658"}
+debug:[14/Nov/2023:12:57:09 -0400] Create role Service: Role regresado por repository {"id":"08a905ee-eb2f-4df2-8e80-9f9c70ea0658","name":"students","description":"Estudiantes de Backend"}
+debug:[14/Nov/2023:12:57:09 -0400] Role enviado por userService {"id":"08a905ee-eb2f-4df2-8e80-9f9c70ea0658","name":"students","description":"Estudiantes de Backend"}
+info:[14/Nov/2023:12:57:26 -0400] Dentro de create user controller
+info:[14/Nov/2023:12:57:26 -0400] En find by id role repository
+debug:[14/Nov/2023:12:57:26 -0400] Respuesta de DB:{"id":"08a905ee-eb2f-4df2-8e80-9f9c70ea0658","name":"students","description":"Estudiantes de Backend"}
+info:[14/Nov/2023:12:57:26 -0400] En create user repository
+debug:[14/Nov/2023:12:57:26 -0400] Respuesta de DB userEntity {"username":"pepe","email":"perez44@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:57:26.854Z","lastLogin":null,"roleId":{"id":"08a905ee-eb2f-4df2-8e80-9f9c70ea0658","name":"students","description":"Estudiantes de Backend"}}
+debug:[14/Nov/2023:12:57:26 -0400] Respuesta de DB userResponse {"username":"pepe","email":"perez44@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:57:26.854Z","lastLogin":null,"roleId":{"id":"08a905ee-eb2f-4df2-8e80-9f9c70ea0658","name":"students","description":"Estudiantes de Backend"},"id":"32126ce6-716f-44e1-a8cb-cab6494eb060"}
+debug:[14/Nov/2023:12:57:26 -0400] Create user Service: Usuario regresado por repository {"id":"32126ce6-716f-44e1-a8cb-cab6494eb060","username":"pepe","email":"perez44@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:57:26.854Z","lastLogin":null,"roleId":{"id":"08a905ee-eb2f-4df2-8e80-9f9c70ea0658","name":"students","description":"Estudiantes de Backend"}}
+debug:[14/Nov/2023:12:57:26 -0400] Usuario enviado por userService {"id":"32126ce6-716f-44e1-a8cb-cab6494eb060","username":"pepe","email":"perez44@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:57:56 -0400] Dentro de create role controller
+info:[14/Nov/2023:12:57:56 -0400] En create role service
+info:[14/Nov/2023:12:57:56 -0400] En create role repository
+debug:[14/Nov/2023:12:57:56 -0400] Respuesta de DB roleEntity {"name":"admin","description":"Administrador"}
+debug:[14/Nov/2023:12:57:56 -0400] Respuesta de DB roleResponse {"name":"admin","description":"Administrador","id":"ea9071ae-93f0-4745-b131-a94fe75b4688"}
+debug:[14/Nov/2023:12:57:56 -0400] Create role Service: Role regresado por repository {"id":"ea9071ae-93f0-4745-b131-a94fe75b4688","name":"admin","description":"Administrador"}
+debug:[14/Nov/2023:12:57:56 -0400] Role enviado por userService {"id":"ea9071ae-93f0-4745-b131-a94fe75b4688","name":"admin","description":"Administrador"}
+info:[14/Nov/2023:12:58:30 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:58:30 -0400] En update user service
+info:[14/Nov/2023:12:58:30 -0400] En find by id user repository
+debug:[14/Nov/2023:12:58:30 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:12:58:30 -0400] Update usr service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+info:[14/Nov/2023:12:58:30 -0400] En find by id role repository
+debug:[14/Nov/2023:12:58:30 -0400] Respuesta de DB:{"id":"ea9071ae-93f0-4745-b131-a94fe75b4688","name":"admin","description":"Administrador"}
+info:[14/Nov/2023:12:58:30 -0400] En update user repository
+debug:[14/Nov/2023:12:58:30 -0400] Respuesta de DB userEntity {"generatedMaps":[],"raw":[],"affected":1}
+debug:[14/Nov/2023:12:58:30 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:12:58:30 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:12:58:30 -0400] Update user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:12:58:30 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:59:22 -0400] Dentro de update user controller
+info:[14/Nov/2023:12:59:22 -0400] En update user service
+info:[14/Nov/2023:12:59:22 -0400] En find by id user repository
+debug:[14/Nov/2023:12:59:22 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:12:59:22 -0400] Update usr service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"vivian123","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+info:[14/Nov/2023:12:59:22 -0400] En find by id role repository
+debug:[14/Nov/2023:12:59:22 -0400] Respuesta de DB:{"id":"ea9071ae-93f0-4745-b131-a94fe75b4688","name":"admin","description":"Administrador"}
+info:[14/Nov/2023:12:59:22 -0400] En update user repository
+debug:[14/Nov/2023:12:59:22 -0400] Respuesta de DB userEntity {"generatedMaps":[],"raw":[],"affected":1}
+debug:[14/Nov/2023:12:59:22 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:12:59:22 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:12:59:22 -0400] Update user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:12:59:22 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","lastLogin":null}
+info:[14/Nov/2023:12:59:52 -0400] Dentro de create role controller
+info:[14/Nov/2023:12:59:52 -0400] En create role service
+info:[14/Nov/2023:12:59:52 -0400] En create role repository
+debug:[14/Nov/2023:12:59:52 -0400] Respuesta de DB roleEntity {"name":"professor","description":"Profesores de la institucion"}
+debug:[14/Nov/2023:12:59:52 -0400] Respuesta de DB roleResponse {"name":"professor","description":"Profesores de la institucion","id":"4ffcdafe-c9c9-452f-9eff-d00cbbea22c7"}
+debug:[14/Nov/2023:12:59:52 -0400] Create role Service: Role regresado por repository {"id":"4ffcdafe-c9c9-452f-9eff-d00cbbea22c7","name":"professor","description":"Profesores de la institucion"}
+debug:[14/Nov/2023:12:59:52 -0400] Role enviado por userService {"id":"4ffcdafe-c9c9-452f-9eff-d00cbbea22c7","name":"professor","description":"Profesores de la institucion"}
+info:[14/Nov/2023:13:00:10 -0400] Dentro de update user controller
+info:[14/Nov/2023:13:00:10 -0400] En update user service
+info:[14/Nov/2023:13:00:10 -0400] En find by id user repository
+debug:[14/Nov/2023:13:00:10 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:13:00:10 -0400] Update usr service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+info:[14/Nov/2023:13:00:10 -0400] En find by id role repository
+debug:[14/Nov/2023:13:00:10 -0400] Respuesta de DB:{"id":"4ffcdafe-c9c9-452f-9eff-d00cbbea22c7","name":"professor","description":"Profesores de la institucion"}
+info:[14/Nov/2023:13:00:10 -0400] En update user repository
+debug:[14/Nov/2023:13:00:10 -0400] Respuesta de DB userEntity {"generatedMaps":[],"raw":[],"affected":1}
+debug:[14/Nov/2023:13:00:10 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:13:00:10 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:13:00:10 -0400] Update user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
+debug:[14/Nov/2023:13:00:10 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","lastLogin":null}

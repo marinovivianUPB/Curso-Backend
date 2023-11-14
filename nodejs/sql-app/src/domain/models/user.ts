@@ -1,3 +1,4 @@
+import { IRoleEntity } from '../entities/IRoleEntity';
 import { IUserEntity } from '../entities/IUserEntity';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -8,7 +9,7 @@ export class User {
     email: string;
     createdAt: Date;
     lastLogin: Date | null;
-    roleId: string;
+    roleId: IRoleEntity;
 
     constructor(userEntity: IUserEntity) {
         this.id = userEntity.id || uuidv4();

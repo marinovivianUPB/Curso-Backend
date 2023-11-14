@@ -6,9 +6,11 @@ import { UserDto } from '../dtos/user.dto';
 import logger from '../../infrastructure/logger/logger';
 import { UpdateUserDTO } from "../dtos/update.user.dto";
 import { DeletedDTO } from "../dtos/deleted";
+import { RoleRepository } from "../../domain/interfaces/roleRepository";
+import { RoleEntity } from "../../infrastructure/entities/roleEntity";
 
 export class UserService {
-    constructor(private userRepository: UserRepository) { }
+    constructor(private userRepository: UserRepository, private roleRepository: RoleRepository) { }
 
     async getUserById(id: string): Promise<UserDto | null> {
 
@@ -29,12 +31,16 @@ export class UserService {
     }
 
     async createUser(userDto: CreateUserDTO): Promise<UserDto> {
-        logger.info("En create user service");
+        
+        const auxRole = await this.roleRepository.findById(userDto.roleId);
+        if(!auxRole){
+            throw new Error('Rol no encontrado')
+        }
         const userEntity: IUserEntity = {
             username: userDto.username,
             email: userDto.email,
             passwordHash: userDto.password,
-            roleId: userDto.roleId,
+            roleId: auxRole,
             createdAt: new Date(),
             lastLogin: null,
         };
@@ -51,12 +57,16 @@ export class UserService {
             return null
         }
         logger.debug(`Update usr service: Usuario regresado por repository ${JSON.stringify(backupUser)}`);
-        const user: UpdateUserDTO = {
-            username: (userDto.username? userDto.username: backupUser.username),
-            email: (userDto.email? userDto.email:backupUser.email),
-            roleId: (userDto.roleId? userDto.roleId:backupUser.roleId)
+
+        const user: IUserEntity = {
+            username: (userDto.username ? userDto.username : backupUser.username),
+            email: (userDto.email ? userDto.email : backupUser.email),
+            passwordHash: (userDto.password ? userDto.password : backupUser.passwordHash),
+            roleId: (userDto.roleId ? (await this.roleRepository.findById(userDto.roleId)) : backupUser.roleId) as RoleEntity,
+            createdAt: backupUser.createdAt,
+            lastLogin: backupUser.lastLogin
         }
-        const responseUser = await this.userRepository.updateUser(user, id);
+        const responseUser = await this.userRepository.updateUser(new User(user), id);
         logger.debug(`Update user Service: Usuario regresado por repository ${JSON.stringify(responseUser)}`);
         return {id: responseUser.id, username: responseUser.username, email: responseUser.email, lastLogin: responseUser.lastLogin};
     }

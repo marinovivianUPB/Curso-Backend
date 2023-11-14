@@ -23,17 +23,19 @@ AppDataSource.initialize().then(() => {
         res.send('Servidor Up');
     });
 
-    const userRepository = new UserRepositoryImpl();
-    const userService = new UserService(userRepository);
-    const userController = new UserController(userService);
-
-    app.use('/users', userController.router);
+    
 
     const roleRepository = new RoleRepositoryImpl();
     const roleService = new RoleService(roleRepository);
     const roleController = new RoleController(roleService);
 
     app.use('/roles', roleController.router);
+
+    const userRepository = new UserRepositoryImpl();
+    const userService = new UserService(userRepository, roleRepository);
+    const userController = new UserController(userService);
+
+    app.use('/users', userController.router);
 
     app.use(
         morgan("combined", {

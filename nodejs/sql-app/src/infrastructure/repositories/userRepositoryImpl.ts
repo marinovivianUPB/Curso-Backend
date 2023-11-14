@@ -49,12 +49,14 @@ export class UserRepositoryImpl implements UserRepository {
         })
     }
 
-    async updateUser(user: UpdateUserDTO, id: string): Promise<User> {
+    async updateUser(user: User, id: string): Promise<User> {
         logger.info("En update user repository")
         // TODO: set user values 
-        const userEntity = AppDataSource.getRepository(UserEntity).update({id}, {username: user.username, email: user.email, roleId: user.roleId});
+        const userEntity = await AppDataSource.getRepository(UserEntity).update({id}, {username: user.username, email: user.email, passwordHash: user.passwordHash, roleId: user.roleId});
         logger.debug(`Respuesta de DB userEntity ${JSON.stringify(userEntity)}`);
-        const userResponse = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
+        const userAux = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
+        logger.debug(`Respuesta de DB:${JSON.stringify(userAux)}`);
+        const userResponse = AppDataSource.getRepository(UserEntity).merge(userAux);
         logger.debug(`Respuesta de DB:${JSON.stringify(userResponse)}`);
         return userResponse? new User({
             id: userResponse.id,
