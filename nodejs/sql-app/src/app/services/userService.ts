@@ -66,6 +66,9 @@ export class UserService {
             createdAt: backupUser.createdAt,
             lastLogin: backupUser.lastLogin
         }
+        if(!user.roleId){
+            throw new Error('Rol no encontrado')
+        }
         const responseUser = await this.userRepository.updateUser(new User(user), id);
         logger.debug(`Update user Service: Usuario regresado por repository ${JSON.stringify(responseUser)}`);
         return {id: responseUser.id, username: responseUser.username, email: responseUser.email, lastLogin: responseUser.lastLogin};
