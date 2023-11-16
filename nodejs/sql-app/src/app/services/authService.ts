@@ -6,7 +6,10 @@ import { UserDto } from "../dtos/user.dto";
 import { User } from "../../domain/models/user";
 import { Encrypt } from "../utils/encrypt";
 import bcrypt from "bcrypt";
+<<<<<<< HEAD
 import { UserAuthDto } from "../dtos/auth.user.dto";
+=======
+>>>>>>> aaa646fa8c6ce9b6c300222b93386f804fc0e67d
 
 export class AuthService {
 
@@ -14,7 +17,11 @@ export class AuthService {
 
     }
 
+<<<<<<< HEAD
     async login(loginDTO: LoginDTO): Promise<UserAuthDto> {
+=======
+    async login(loginDTO: LoginDTO): Promise<UserDto> {
+>>>>>>> aaa646fa8c6ce9b6c300222b93386f804fc0e67d
         const userEntity: Partial<IUserEntity> = {
             email: loginDTO.email,
             passwordHash: loginDTO.password
@@ -25,6 +32,11 @@ export class AuthService {
             throw Error('El email o el password son incorrectos');
         }
 
+<<<<<<< HEAD
+=======
+        // TODO: llevarlo al utils 
+
+>>>>>>> aaa646fa8c6ce9b6c300222b93386f804fc0e67d
         const isPasswordCorrect = await bcrypt.compare(userEntity.passwordHash, user.passwordHash);
         if (!isPasswordCorrect) {
             logger.error(`La contraseña es incorrecta : ${userEntity.email}`);
@@ -32,11 +44,18 @@ export class AuthService {
         }
 
         const token = this.encrypt.encrypt({ userId: user.id });
+<<<<<<< HEAD
 
         user.token = token;
         user.lastLogin = new Date();
 
         const userUpdated = await this.userRepository.updateUser(user, user.id);
+=======
+        user.token = token;
+        user.lastLogin = new Date();
+
+        const userUpdated = await this.userRepository.updateUser(user.id, user);
+>>>>>>> aaa646fa8c6ce9b6c300222b93386f804fc0e67d
 
         return {
             id: userUpdated.id,

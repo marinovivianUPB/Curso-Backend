@@ -12,7 +12,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^4.17.21",
+<<<<<<< HEAD
+=======
+    "@types/jsonwebtoken": "^9.0.5",
+>>>>>>> aaa646fa8c6ce9b6c300222b93386f804fc0e67d
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.9.0",
     "@types/uuid": "^9.0.7",
@@ -22,8 +27,14 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+<<<<<<< HEAD
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+=======
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+>>>>>>> aaa646fa8c6ce9b6c300222b93386f804fc0e67d
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",

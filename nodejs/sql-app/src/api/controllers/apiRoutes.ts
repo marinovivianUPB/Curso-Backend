@@ -25,4 +25,8 @@ export function apiRoutes(): Router {
     router.use('/auth', authController.router);
 
     return router;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aaa646fa8c6ce9b6c300222b93386f804fc0e67d

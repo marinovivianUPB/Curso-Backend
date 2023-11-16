@@ -1,15 +1,15 @@
 import winston from 'winston';
-import {log} from "../config/config"
+import { log, env } from '../config/config';
 
 const myFormat = winston.format.printf(({ level, message, timestamp }) => {
     return `${level}:[${timestamp}] ${message}`;
 });
 
 const logger = winston.createLogger({
-    level: log.level, //aqui activamos modo debug
+    level: lg.level,
     format: winston.format.combine(
         winston.format.timestamp({ format: "DD/MMM/YYYY:HH:mm:ss ZZ" }),
-        myFormat
+        winston.format.simple(),//myFormat
     ),
     transports: [
         new winston.transports.File({ filename: 'error.log', level: 'error' }),
@@ -17,7 +17,7 @@ const logger = winston.createLogger({
     ],
 });
 
-if (process.env.NODE_ENV !== 'production') {
+if (env.environment !== 'production') {
     logger.add(new winston.transports.Console({
         format: winston.format.combine(
             winston.format.timestamp({ format: "DD/MMM/YYYY:HH:mm:ss ZZ" }),

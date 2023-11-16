@@ -1,4 +1,5 @@
 import { RoleEntity } from "../../infrastructure/entities/roleEntity";
+import { IRoleEntity } from "./IRoleEntity";
 
 export interface IUserEntity {
     id?: string;
@@ -7,5 +8,5 @@ export interface IUserEntity {
     passwordHash: string;
     createdAt: Date;
     lastLogin: Date | null;
-    roleId: RoleEntity;
+    roleId: IRoleEntity;
 }

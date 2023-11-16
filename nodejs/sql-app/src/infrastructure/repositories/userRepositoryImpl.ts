@@ -1,3 +1,5 @@
+import bcrypt from "bcrypt";
+
 import { UserRepository } from "../../domain/interfaces/userRepository";
 import { UserEntity } from "../entities/userEntity";
 import { AppDataSource } from "../config/dataSource";
@@ -38,10 +40,10 @@ export class UserRepositoryImpl implements UserRepository {
         const userEntity = AppDataSource.getRepository(UserEntity).create({
             username: user.username,
             email: user.email,
-            passwordHash: user.passwordHash,
+            passwordHash: hash,
             createdAt: user.createdAt || new Date(),
             lastLogin: user.lastLogin || null,
-            roleId: user.roleId
+            role: user.role
         });
         logger.debug(`Respuesta de DB userEntity ${JSON.stringify(userEntity)}`);
 
@@ -56,8 +58,40 @@ export class UserRepositoryImpl implements UserRepository {
             passwordHash: userResponse.passwordHash,
             createdAt: userResponse.createdAt,
             lastLogin: userResponse.lastLogin,
-            roleId: userResponse.roleId
-        })
+            role: userResponse.role
+        });
+    }
+
+    async deleteUser(id: string): Promise<void> {
+
+        const repository = AppDataSource.getRepository(UserEntity);
+        const user = await repository.findOneBy({ id });
+
+        if (!user) {
+            logger.error(`UserRepository: Error al eliminar al usuario con ID: ${id}.`);
+            throw new Error('Usuario no encontrado');
+        }
+
+        await repository.remove(user);
+    }
+
+    async updateUser(id: string, updateData: Partial<User>): Promise<User> {
+        const repository = AppDataSource.getRepository(UserEntity);
+        const user = await repository.findOneBy({ id });
+
+        if (!user) {
+            logger.error(`UserRepository: Error al modificar al usuario con ID: ${id}.`);
+            throw new Error('Usuario no encontrado');
+        }
+
+        // if (user.role.id !== updateData.roleId)
+        // get role a partir del updateData.roleId
+        // if (!role) 
+        // user.role = role
+
+        repository.merge(user, updateData);
+        const updatedUser = await repository.save(user);
+        return updatedUser;
     }
 
     async updateUser(user: User, id: string): Promise<User> {
