@@ -22,3 +22,7 @@ export const jwt = {
     secretKey: process.env.JWT_SECRET || 'your_secret_key',
     expirationTime: process.env.JWT_TIME_EXPIRED || '1h'
 }
+
+export const redis_env = {
+    url: process.env.REDIS_URL || 'otra_url'
+}

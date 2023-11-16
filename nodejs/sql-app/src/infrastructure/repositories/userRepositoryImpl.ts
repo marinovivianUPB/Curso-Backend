@@ -20,7 +20,10 @@ export class UserRepositoryImpl implements UserRepository {
 
     async findById(id: string): Promise<User | null> {
         logger.info("En find by id user repository")
-        const userEntity = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
+        const userEntity = await AppDataSource.getRepository(UserEntity).findOne({
+            where: {id},
+            relations: ['roleId']
+        });
         console.log(userEntity);
         logger.debug(`Respuesta de DB:${JSON.stringify(userEntity)}`);
         return userEntity ? new User(userEntity) : null;
