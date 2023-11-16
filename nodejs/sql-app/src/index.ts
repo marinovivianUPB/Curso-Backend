@@ -15,9 +15,6 @@ import { AuthController } from './api/controllers/authController';
 import { AuthService } from './app/services/authService';
 import { apiRoutes } from './api/controllers/apiRoutes';
 import { EncryptImpl } from './infrastructure/utils/encrypt.jwt';
-import { PermissionController } from './api/controllers/permissionController';
-import { PermissionService } from './app/services/permissionService';
-import { PermissionRepositoryImpl } from './infrastructure/repositories/permissionRepositoryImpl';
 
 AppDataSource.initialize().then(() => {
     const app = express();
@@ -44,15 +41,9 @@ AppDataSource.initialize().then(() => {
     const authService = new AuthService(userRepository, encrypt);
     const authController = new AuthController(authService);
 
-    const permissionRepository = new PermissionRepositoryImpl();
-    const permissionService = new PermissionService(permissionRepository);
-    const permissionController = new PermissionController(permissionService);
     
-    // app.use('/api', apiRoutes());
-    app.use('/users', userController.router);
-    app.use('/roles', roleController.router);
-    app.use('/auth', authController.router);
-    app.use('/permission', permissionController.router);
+    
+    app.use('/api', apiRoutes());
 
     app.use(
         morgan("combined", {

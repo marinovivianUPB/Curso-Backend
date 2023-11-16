@@ -1,3 +1,5 @@
+import { createClient } from "redis";
+import { ICacheService } from "../../domain/interfaces/cacheService";
 import { redis_env } from "../config/config";
 
 export class RedisCacheService implements ICacheService{
@@ -12,7 +14,7 @@ export class RedisCacheService implements ICacheService{
         return this.client.get(key);
     }
 
-    async set(key: string, value: string): Promise<void>{
-        await this.client.set(key,value),
+    async set(key: string, value: string, ttl?: number): Promise<void>{
+        await this.client.set(key,value);
     }
 }

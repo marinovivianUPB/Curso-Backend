@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 import { UserRepository } from "../../domain/interfaces/userRepository";
 import { UserEntity } from "../entities/userEntity";

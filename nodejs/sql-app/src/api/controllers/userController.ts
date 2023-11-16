@@ -5,6 +5,7 @@ import { CreateUserDTO } from '../../app/dtos/create.user.dto';
 import logger from '../../infrastructure/logger/logger';
 import { UpdateUserDTO } from '../../app/dtos/update.user.dto';
 import { verifyTokenMiddleware } from '../middleware/verifyToken';
+import { verifyCreate } from '../middleware/verifyTypes';
 
 export class UserController {
     public router: Router;
@@ -84,7 +85,7 @@ export class UserController {
 
     public routes() {
         this.router.get('/:id', verifyTokenMiddleware, this.getUserById.bind(this));
-        this.router.post('/', this.createUser.bind(this));
+        this.router.post('/', verifyCreate, this.createUser.bind(this));
         this.router.put('/:id', this.updateUser.bind(this));
         this.router.delete('/:id', this.deleteUser.bind(this));
     }
