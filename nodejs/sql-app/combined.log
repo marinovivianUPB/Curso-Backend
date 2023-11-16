@@ -589,3 +589,17 @@ debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"
 debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:20:21 -0400"}
 error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:01:20:21 -0400","username":"gwen"}
 info: ::1 - - [16/Nov/2023:05:20:21 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:20:21 -0400"}
+info: Dentro de create user controller {"timestamp":"16/Nov/2023:01:23:15 -0400"}
+info: En find by id role repository {"timestamp":"16/Nov/2023:01:23:15 -0400"}
+debug: Respuesta de DB:null {"timestamp":"16/Nov/2023:01:23:15 -0400"}
+error: Error al crear usuario: Error: Rol no encontrado {"email":"juan3@gmail.com","password":"juan","roleId":"2","timestamp":"16/Nov/2023:01:23:15 -0400","username":"juan"}
+info: ::1 - - [16/Nov/2023:05:23:15 +0000] "POST /users/ HTTP/1.1" 500 31 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:23:15 -0400"}
+info: Dentro de create user controller {"timestamp":"16/Nov/2023:01:23:53 -0400"}
+info: En find by id role repository {"timestamp":"16/Nov/2023:01:23:53 -0400"}
+debug: Respuesta de DB:{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"} {"timestamp":"16/Nov/2023:01:23:53 -0400"}
+info: En create user repository {"timestamp":"16/Nov/2023:01:23:53 -0400"}
+debug: Respuesta de DB userEntity {"id":"5b649e84-ffef-408d-8dae-f6d2e3fa73ac","username":"juan","email":"juan3@gmail.com","passwordHash":"$2b$10$W1Swkd32vk6SmkNKltNWeu60SOtgd/Hpe3iu/VUrVvqXIPMK1/Bti","createdAt":"2023-11-16T05:23:53.047Z","lastLogin":null,"roleId":{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"}} {"timestamp":"16/Nov/2023:01:23:53 -0400"}
+debug: Respuesta de DB userResponse {"id":"5b649e84-ffef-408d-8dae-f6d2e3fa73ac","username":"juan","email":"juan3@gmail.com","passwordHash":"$2b$10$W1Swkd32vk6SmkNKltNWeu60SOtgd/Hpe3iu/VUrVvqXIPMK1/Bti","createdAt":"2023-11-16T05:23:53.047Z","lastLogin":null,"roleId":{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"}} {"timestamp":"16/Nov/2023:01:23:53 -0400"}
+debug: Create user Service: Usuario regresado por repository {"id":"5b649e84-ffef-408d-8dae-f6d2e3fa73ac","username":"juan","email":"juan3@gmail.com","passwordHash":"$2b$10$W1Swkd32vk6SmkNKltNWeu60SOtgd/Hpe3iu/VUrVvqXIPMK1/Bti","createdAt":"2023-11-16T05:23:53.047Z","lastLogin":null,"roleId":{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"}} {"timestamp":"16/Nov/2023:01:23:53 -0400"}
+debug: Usuario enviado por userService {"id":"5b649e84-ffef-408d-8dae-f6d2e3fa73ac","username":"juan","email":"juan3@gmail.com","lastLogin":null} {"timestamp":"16/Nov/2023:01:23:53 -0400"}
+info: ::1 - - [16/Nov/2023:05:23:53 +0000] "POST /users/ HTTP/1.1" 201 106 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:23:53 -0400"}
