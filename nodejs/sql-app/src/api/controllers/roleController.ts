@@ -40,8 +40,7 @@ export class RoleController {
             return res.status(201).json(role);
         } catch (error) {
             logger.error("Error al crear rol: "+error, req.body);
-            console.log(error);
-            return res.status(400).json({ message: error });
+            return res.status(400).json({ message: 'No se pudo crear el rol' });
         }
     }
 
@@ -55,8 +54,7 @@ export class RoleController {
             return res.status(201).json(role);
         } catch (error) {
             logger.error("Error al actualizar role: "+error, req.body);
-            console.log(error);
-            return res.status(400).json({ message: error });
+            return res.status(400).json({ message: 'No se pudo actualizar el rol' });
         }
     }
 

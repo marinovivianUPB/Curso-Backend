@@ -6,7 +6,7 @@ const myFormat = winston.format.printf(({ level, message, timestamp }) => {
 });
 
 const logger = winston.createLogger({
-    level: lg.level,
+    level: log.level,
     format: winston.format.combine(
         winston.format.timestamp({ format: "DD/MMM/YYYY:HH:mm:ss ZZ" }),
         winston.format.simple(),//myFormat

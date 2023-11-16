@@ -21,6 +21,7 @@ export class UserRepositoryImpl implements UserRepository {
     async findById(id: string): Promise<User | null> {
         logger.info("En find by id user repository")
         const userEntity = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
+        console.log(userEntity);
         logger.debug(`Respuesta de DB:${JSON.stringify(userEntity)}`);
         return userEntity ? new User(userEntity) : null;
     }
@@ -29,7 +30,7 @@ export class UserRepositoryImpl implements UserRepository {
         const userRepository = AppDataSource.getRepository(UserEntity);
         const user = await userRepository.findOne({
             where: { email },
-            relations: ['role']
+            relations: ['roleId']
         });
         return user ? new User(user) : null;
     }
@@ -40,6 +41,7 @@ export class UserRepositoryImpl implements UserRepository {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(user.passwordHash, salt);
         const userEntity = AppDataSource.getRepository(UserEntity).create({
+            id:user.id,
             username: user.username,
             email: user.email,
             passwordHash: hash,
@@ -65,11 +67,13 @@ export class UserRepositoryImpl implements UserRepository {
     async updateUser(user: User, id: string): Promise<User> {
         logger.info("En update user repository")
         // TODO: set user values 
-        const userEntity = await AppDataSource.getRepository(UserEntity).update({id}, {username: user.username, email: user.email, passwordHash: user.passwordHash, roleId: user.roleId});
-        logger.debug(`Respuesta de DB userEntity ${JSON.stringify(userEntity)}`);
         const userAux = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
         logger.debug(`Respuesta de DB:${JSON.stringify(userAux)}`);
-        const userResponse = AppDataSource.getRepository(UserEntity).merge(userAux);
+        const userResponse = AppDataSource.getRepository(UserEntity).merge(userAux, {username: user.username,
+            email : user.email,
+            passwordHash : user.passwordHash,
+            lastLogin : user.lastLogin,
+            roleId : user.roleId});
         logger.debug(`Respuesta de DB:${JSON.stringify(userResponse)}`);
         return userResponse? new User({
             id: userResponse.id,

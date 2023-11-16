@@ -303,3 +303,289 @@ debug:[14/Nov/2023:13:15:37 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f
 debug:[14/Nov/2023:13:15:37 -0400] Respuesta de DB:{"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
 debug:[14/Nov/2023:13:15:37 -0400] Update user Service: Usuario regresado por repository {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","passwordHash":"holiiii","createdAt":"2023-11-14T16:05:05.000Z","lastLogin":null}
 debug:[14/Nov/2023:13:15:37 -0400] Usuario enviado por userService {"id":"a5ae5158-0ebf-479b-a7f1-f507efa9f0f3","username":"juanPerez41","email":"perez141@gmail.com","lastLogin":null}
+info: Dentro de create role controller {"timestamp":"15/Nov/2023:23:05:01 -0400"}
+info: En create role service {"timestamp":"15/Nov/2023:23:05:01 -0400"}
+info: En create role repository {"timestamp":"15/Nov/2023:23:05:01 -0400"}
+debug: Respuesta de DB roleEntity {"name":"student","description":"Para estudiantes de Backend"} {"timestamp":"15/Nov/2023:23:05:01 -0400"}
+debug: Respuesta de DB roleResponse {"name":"student","description":"Para estudiantes de Backend","id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3"} {"timestamp":"15/Nov/2023:23:05:01 -0400"}
+debug: Create role Service: Role regresado por repository {"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"} {"timestamp":"15/Nov/2023:23:05:01 -0400"}
+debug: Role enviado por userService {"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"} {"timestamp":"15/Nov/2023:23:05:01 -0400"}
+info: ::1 - - [16/Nov/2023:03:05:01 +0000] "POST /roles/ HTTP/1.1" 201 106 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:05:01 -0400"}
+info: Dentro de create role controller {"timestamp":"15/Nov/2023:23:07:16 -0400"}
+info: En create role service {"timestamp":"15/Nov/2023:23:07:16 -0400"}
+info: En create role repository {"timestamp":"15/Nov/2023:23:07:16 -0400"}
+debug: Respuesta de DB roleEntity {"name":"student","description":"Para estudiantes de Backend"} {"timestamp":"15/Nov/2023:23:07:16 -0400"}
+error: Error al crear rol: QueryFailedError: ER_DUP_ENTRY: Duplicate entry 'student' for key 'role_entity.IDX_61db0b4faa9a193b713c7f952e' {"description":"Para estudiantes de Backend","name":"student","timestamp":"15/Nov/2023:23:07:16 -0400"}
+info: ::1 - - [16/Nov/2023:03:07:16 +0000] "POST /roles/ HTTP/1.1" 400 827 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:07:16 -0400"}
+info: Dentro de create role controller {"timestamp":"15/Nov/2023:23:08:38 -0400"}
+info: En create role service {"timestamp":"15/Nov/2023:23:08:38 -0400"}
+info: En create role repository {"timestamp":"15/Nov/2023:23:08:38 -0400"}
+debug: Respuesta de DB roleEntity {"name":"student","description":"Para estudiantes de Backend"} {"timestamp":"15/Nov/2023:23:08:38 -0400"}
+error: Error al crear rol: QueryFailedError: ER_DUP_ENTRY: Duplicate entry 'student' for key 'role_entity.IDX_61db0b4faa9a193b713c7f952e' {"description":"Para estudiantes de Backend","name":"student","timestamp":"15/Nov/2023:23:08:38 -0400"}
+info: ::1 - - [16/Nov/2023:03:08:38 +0000] "POST /roles/ HTTP/1.1" 400 37 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:08:38 -0400"}
+info: Dentro de create role controller {"timestamp":"15/Nov/2023:23:08:57 -0400"}
+info: En create role service {"timestamp":"15/Nov/2023:23:08:57 -0400"}
+info: En create role repository {"timestamp":"15/Nov/2023:23:08:57 -0400"}
+debug: Respuesta de DB roleEntity {"name":"professor","description":"Para docentes de la institucion"} {"timestamp":"15/Nov/2023:23:08:57 -0400"}
+debug: Respuesta de DB roleResponse {"name":"professor","description":"Para docentes de la institucion","id":"1ec116eb-ae9c-4778-a668-9771c4581239"} {"timestamp":"15/Nov/2023:23:08:58 -0400"}
+debug: Create role Service: Role regresado por repository {"id":"1ec116eb-ae9c-4778-a668-9771c4581239","name":"professor","description":"Para docentes de la institucion"} {"timestamp":"15/Nov/2023:23:08:58 -0400"}
+debug: Role enviado por userService {"id":"1ec116eb-ae9c-4778-a668-9771c4581239","name":"professor","description":"Para docentes de la institucion"} {"timestamp":"15/Nov/2023:23:08:58 -0400"}
+info: ::1 - - [16/Nov/2023:03:08:58 +0000] "POST /roles/ HTTP/1.1" 201 112 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:08:58 -0400"}
+info: Dentro de create user controller {"timestamp":"15/Nov/2023:23:11:31 -0400"}
+info: En find by id role repository {"timestamp":"15/Nov/2023:23:11:31 -0400"}
+debug: Respuesta de DB:null {"timestamp":"15/Nov/2023:23:11:31 -0400"}
+error: Error al crear usuario: Error: Rol no encontrado {"email":"juan@gmail.com","password":"juan","roleId":"{{professor_rol_id}}","timestamp":"15/Nov/2023:23:11:31 -0400","username":"juan"}
+info: ::1 - - [16/Nov/2023:03:11:31 +0000] "POST /users/ HTTP/1.1" 500 31 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:11:31 -0400"}
+info: Dentro de create role controller {"timestamp":"15/Nov/2023:23:12:41 -0400"}
+info: En create role service {"timestamp":"15/Nov/2023:23:12:41 -0400"}
+info: En create role repository {"timestamp":"15/Nov/2023:23:12:41 -0400"}
+debug: Respuesta de DB roleEntity {"name":"professor","description":"Para docentes de la institucion"} {"timestamp":"15/Nov/2023:23:12:41 -0400"}
+debug: Respuesta de DB roleResponse {"name":"professor","description":"Para docentes de la institucion","id":"e3d7aed7-c54c-42db-baa8-19a5c59f9187"} {"timestamp":"15/Nov/2023:23:12:41 -0400"}
+debug: Create role Service: Role regresado por repository {"id":"e3d7aed7-c54c-42db-baa8-19a5c59f9187","name":"professor","description":"Para docentes de la institucion"} {"timestamp":"15/Nov/2023:23:12:41 -0400"}
+debug: Role enviado por userService {"id":"e3d7aed7-c54c-42db-baa8-19a5c59f9187","name":"professor","description":"Para docentes de la institucion"} {"timestamp":"15/Nov/2023:23:12:41 -0400"}
+info: ::1 - - [16/Nov/2023:03:12:41 +0000] "POST /roles/ HTTP/1.1" 201 112 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:12:41 -0400"}
+info: Dentro de create user controller {"timestamp":"15/Nov/2023:23:12:46 -0400"}
+info: En find by id role repository {"timestamp":"15/Nov/2023:23:12:46 -0400"}
+debug: Respuesta de DB:null {"timestamp":"15/Nov/2023:23:12:46 -0400"}
+error: Error al crear usuario: Error: Rol no encontrado {"email":"juan@gmail.com","password":"juan","roleId":"{{professor_rol_id}}","timestamp":"15/Nov/2023:23:12:46 -0400","username":"juan"}
+info: ::1 - - [16/Nov/2023:03:12:46 +0000] "POST /users/ HTTP/1.1" 500 31 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:12:46 -0400"}
+info: Dentro de create user controller {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+info: En find by id role repository {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+debug: Respuesta de DB:{"id":"e3d7aed7-c54c-42db-baa8-19a5c59f9187","name":"professor","description":"Para docentes de la institucion"} {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+info: En create user repository {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+debug: Respuesta de DB userEntity {"username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.306Z","lastLogin":null,"roleId":{"id":"e3d7aed7-c54c-42db-baa8-19a5c59f9187","name":"professor","description":"Para docentes de la institucion"}} {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+debug: Respuesta de DB userResponse {"username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.306Z","lastLogin":null,"roleId":{"id":"e3d7aed7-c54c-42db-baa8-19a5c59f9187","name":"professor","description":"Para docentes de la institucion"},"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef"} {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+debug: Create user Service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.306Z","lastLogin":null,"roleId":{"id":"e3d7aed7-c54c-42db-baa8-19a5c59f9187","name":"professor","description":"Para docentes de la institucion"}} {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+debug: Usuario enviado por userService {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","lastLogin":null} {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+info: ::1 - - [16/Nov/2023:03:13:06 +0000] "POST /users/ HTTP/1.1" 201 105 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:13:06 -0400"}
+info: ::1 - - [16/Nov/2023:03:14:46 +0000] "GET /auth/ HTTP/1.1" 404 144 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:14:46 -0400"}
+info: ::1 - - [16/Nov/2023:03:14:46 +0000] "GET /auth/ HTTP/1.1" 404 144 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:14:46 -0400"}
+info: ::1 - - [16/Nov/2023:03:15:01 +0000] "GET /auth HTTP/1.1" 404 143 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:15:01 -0400"}
+info: ::1 - - [16/Nov/2023:03:15:01 +0000] "GET /auth HTTP/1.1" 404 143 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:15:01 -0400"}
+info: ::1 - - [16/Nov/2023:03:15:40 +0000] "GET /auth HTTP/1.1" 404 143 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:15:40 -0400"}
+info: ::1 - - [16/Nov/2023:03:15:40 +0000] "GET /auth HTTP/1.1" 404 143 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:15:40 -0400"}
+error: There is an error in the login process Property "role" was not found in "UserEntity". Make sure your query is correct. {"stack":"EntityPropertyNotFoundError: Property \"role\" was not found in \"UserEntity\". Make sure your query is correct.\n    at C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\SelectQueryBuilder.ts:3911:23\n    at Array.forEach (<anonymous>)\n    at SelectQueryBuilder.buildRelations (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\SelectQueryBuilder.ts:3903:32)\n    at SelectQueryBuilder.applyFindOptions (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\SelectQueryBuilder.ts:3103:22)\n    at SelectQueryBuilder.setFindOptions (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\SelectQueryBuilder.ts:105:14)\n    at EntityManager.findOne (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\entity-manager\\EntityManager.ts:1189:14)\n    at Repository.findOne (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\repository\\Repository.ts:577:29)\n    at UserRepositoryImpl.<anonymous> (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\infrastructure\\repositories\\userRepositoryImpl.ts:30:43)\n    at Generator.next (<anonymous>)\n    at C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\infrastructure\\repositories\\userRepositoryImpl.ts:8:71","timestamp":"15/Nov/2023:23:16:30 -0400"}
+info: ::1 - - [16/Nov/2023:03:16:30 +0000] "POST /auth/login HTTP/1.1" 400 97 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:16:30 -0400"}
+info: En update user repository {"timestamp":"15/Nov/2023:23:19:11 -0400"}
+debug: Respuesta de DB userEntity {"generatedMaps":[],"raw":[],"affected":1} {"timestamp":"15/Nov/2023:23:19:11 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:19:11 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:19:11 -0400"}
+info: ::1 - - [16/Nov/2023:03:19:11 +0000] "POST /auth/login HTTP/1.1" 200 308 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:19:11 -0400"}
+info: Dentro de update user controller {"timestamp":"15/Nov/2023:23:21:02 -0400"}
+info: En update user service {"timestamp":"15/Nov/2023:23:21:02 -0400"}
+info: En find by id user repository {"timestamp":"15/Nov/2023:23:21:02 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:21:02 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:21:02 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"15/Nov/2023:23:21:02 -0400","username":"pepe"}
+info: ::1 - - [16/Nov/2023:03:21:02 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:21:02 -0400"}
+info: Dentro de update user controller {"timestamp":"15/Nov/2023:23:37:30 -0400"}
+info: En update user service {"timestamp":"15/Nov/2023:23:37:30 -0400"}
+info: En find by id user repository {"timestamp":"15/Nov/2023:23:37:30 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:37:31 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:37:31 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"15/Nov/2023:23:37:31 -0400","username":"pepe"}
+info: ::1 - - [16/Nov/2023:03:37:31 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:37:31 -0400"}
+info: Dentro de update user controller {"timestamp":"15/Nov/2023:23:38:44 -0400"}
+info: En update user service {"timestamp":"15/Nov/2023:23:38:44 -0400"}
+info: En find by id user repository {"timestamp":"15/Nov/2023:23:38:44 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:38:44 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:38:44 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"15/Nov/2023:23:38:44 -0400","username":"pepe"}
+info: ::1 - - [16/Nov/2023:03:38:44 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:38:44 -0400"}
+info: Dentro de update user controller {"timestamp":"15/Nov/2023:23:42:05 -0400"}
+info: En update user service {"timestamp":"15/Nov/2023:23:42:05 -0400"}
+info: En find by id user repository {"timestamp":"15/Nov/2023:23:42:05 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:42:05 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:42:05 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"15/Nov/2023:23:42:05 -0400","username":"pepe"}
+info: ::1 - - [16/Nov/2023:03:42:05 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:42:05 -0400"}
+info: Dentro de update user controller {"timestamp":"15/Nov/2023:23:50:24 -0400"}
+info: En update user service {"timestamp":"15/Nov/2023:23:50:24 -0400"}
+info: En find by id user repository {"timestamp":"15/Nov/2023:23:50:24 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:50:24 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"15/Nov/2023:23:50:24 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"15/Nov/2023:23:50:24 -0400","username":"pepe"}
+info: ::1 - - [16/Nov/2023:03:50:24 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"15/Nov/2023:23:50:24 -0400"}
+info: Dentro de update user controller {"timestamp":"16/Nov/2023:00:10:12 -0400"}
+info: En update user service {"timestamp":"16/Nov/2023:00:10:12 -0400"}
+info: En find by id user repository {"timestamp":"16/Nov/2023:00:10:12 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:10:12 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:10:12 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:00:10:12 -0400","username":"pepe"}
+info: ::1 - - [16/Nov/2023:04:10:12 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:10:12 -0400"}
+info: ::1 - - [16/Nov/2023:04:29:46 +0000] "PUT /permission/ HTTP/1.1" 404 150 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:29:46 -0400"}
+info: ::1 - - [16/Nov/2023:04:29:46 +0000] "PUT /permission/ HTTP/1.1" 404 150 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:29:46 -0400"}
+info: Dentro de create permission controller {"timestamp":"16/Nov/2023:00:30:11 -0400"}
+info: En create permission {"timestamp":"16/Nov/2023:00:30:11 -0400"}
+info: En create permission repository {"timestamp":"16/Nov/2023:00:30:11 -0400"}
+debug: Respuesta de DB roleEntity {"name":"pepe","description":"pepe"} {"timestamp":"16/Nov/2023:00:30:11 -0400"}
+debug: Respuesta de DB roleResponse {"name":"pepe","description":"pepe","id":"c4d2670e-1b3a-4f33-a68e-f23b293c11b2"} {"timestamp":"16/Nov/2023:00:30:11 -0400"}
+debug: Create role Service: Permission regresado por repository {"id":"e65a077c-3c92-41ed-bbe9-0cc89bc28435","name":"pepe","description":"pepe"} {"timestamp":"16/Nov/2023:00:30:11 -0400"}
+debug: permission enviado por userService {"id":"e65a077c-3c92-41ed-bbe9-0cc89bc28435","name":"pepe","description":"pepe"} {"timestamp":"16/Nov/2023:00:30:11 -0400"}
+info: ::1 - - [16/Nov/2023:04:30:11 +0000] "POST /permission/ HTTP/1.1" 201 80 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:30:11 -0400"}
+info: Dentro de update role controller {"timestamp":"16/Nov/2023:00:30:29 -0400"}
+info: En update permission service {"timestamp":"16/Nov/2023:00:30:29 -0400"}
+info: En find by id permission repository {"timestamp":"16/Nov/2023:00:30:29 -0400"}
+debug: Respuesta de DB:null {"timestamp":"16/Nov/2023:00:30:29 -0400"}
+debug: permission enviado por permissionService null {"timestamp":"16/Nov/2023:00:30:29 -0400"}
+info: ::1 - - [16/Nov/2023:04:30:29 +0000] "PUT /permission/e65a077c-3c92-41ed-bbe9-0cc89bc28435 HTTP/1.1" 201 4 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:30:29 -0400"}
+info: ::1 - - [16/Nov/2023:04:30:55 +0000] "PUT /permission/ HTTP/1.1" 404 150 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:30:55 -0400"}
+info: ::1 - - [16/Nov/2023:04:30:55 +0000] "PUT /permission/ HTTP/1.1" 404 150 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:30:55 -0400"}
+info: ::1 - - [16/Nov/2023:04:31:08 +0000] "PUT /permission/ HTTP/1.1" 404 150 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:31:08 -0400"}
+info: ::1 - - [16/Nov/2023:04:31:08 +0000] "PUT /permission/ HTTP/1.1" 404 150 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:31:08 -0400"}
+info: Dentro de create permission controller {"timestamp":"16/Nov/2023:00:31:23 -0400"}
+info: En create permission {"timestamp":"16/Nov/2023:00:31:23 -0400"}
+info: En create permission repository {"timestamp":"16/Nov/2023:00:31:23 -0400"}
+debug: Respuesta de DB roleEntity {"name":"roberto","description":"pepe"} {"timestamp":"16/Nov/2023:00:31:23 -0400"}
+debug: Respuesta de DB roleResponse {"name":"roberto","description":"pepe","id":"f3ff384a-faea-44e8-98b8-3f27529793d4"} {"timestamp":"16/Nov/2023:00:31:23 -0400"}
+debug: Create role Service: Permission regresado por repository {"id":"9a54b635-368c-4217-9810-7a7ae7f48b10","name":"roberto","description":"pepe"} {"timestamp":"16/Nov/2023:00:31:23 -0400"}
+debug: permission enviado por userService {"id":"9a54b635-368c-4217-9810-7a7ae7f48b10","name":"roberto","description":"pepe"} {"timestamp":"16/Nov/2023:00:31:23 -0400"}
+info: ::1 - - [16/Nov/2023:04:31:23 +0000] "POST /permission/ HTTP/1.1" 201 83 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:31:23 -0400"}
+info: Dentro de update role controller {"timestamp":"16/Nov/2023:00:31:49 -0400"}
+info: En update permission service {"timestamp":"16/Nov/2023:00:31:49 -0400"}
+info: En find by id permission repository {"timestamp":"16/Nov/2023:00:31:49 -0400"}
+debug: Respuesta de DB:null {"timestamp":"16/Nov/2023:00:31:49 -0400"}
+debug: permission enviado por permissionService null {"timestamp":"16/Nov/2023:00:31:49 -0400"}
+info: ::1 - - [16/Nov/2023:04:31:49 +0000] "PUT /permission/9a54b635-368c-4217-9810-7a7ae7f48b10 HTTP/1.1" 201 4 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:31:49 -0400"}
+info: Dentro de create permission controller {"timestamp":"16/Nov/2023:00:38:29 -0400"}
+info: En create permission {"timestamp":"16/Nov/2023:00:38:29 -0400"}
+info: En create permission repository {"timestamp":"16/Nov/2023:00:38:29 -0400"}
+debug: Respuesta de DB roleEntity {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:38:29 -0400"}
+debug: Respuesta de DB roleResponse {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:38:29 -0400"}
+debug: Create role Service: Permission regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:38:29 -0400"}
+debug: permission enviado por userService {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:38:29 -0400"}
+info: ::1 - - [16/Nov/2023:04:38:29 +0000] "POST /permission/ HTTP/1.1" 201 80 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:38:29 -0400"}
+info: Dentro de update role controller {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+info: En update permission service {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+info: En find by id permission repository {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+debug: Update permission service: Role regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+info: En update permission repository {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+debug: Respuesta de DB roleEntity {} {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+debug: Update permission Service: permission regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+debug: permission enviado por permissionService {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"leon","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+info: ::1 - - [16/Nov/2023:04:39:01 +0000] "PUT /permission/8743b468-795a-4aeb-875b-a3a7285c3f4d HTTP/1.1" 201 80 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:39:01 -0400"}
+info: Dentro de update role controller {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+info: En update permission service {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+info: En find by id permission repository {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+debug: Update permission service: Role regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+info: En update permission repository {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+debug: Respuesta de DB roleEntity {} {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+debug: Update permission Service: permission regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+debug: permission enviado por permissionService {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+info: ::1 - - [16/Nov/2023:04:39:13 +0000] "PUT /permission/8743b468-795a-4aeb-875b-a3a7285c3f4d HTTP/1.1" 201 80 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:39:13 -0400"}
+info: Dentro de update role controller {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+info: En update permission service {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+info: En find by id permission repository {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+debug: Update permission service: Role regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+info: En update permission repository {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+debug: Respuesta de DB roleEntity {} {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+debug: Update permission Service: permission regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+debug: permission enviado por permissionService {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"gwen","description":"pepe"} {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+info: ::1 - - [16/Nov/2023:04:40:24 +0000] "PUT /permission/8743b468-795a-4aeb-875b-a3a7285c3f4d HTTP/1.1" 201 80 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:40:24 -0400"}
+info: Dentro de update role controller {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+info: En update permission service {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+info: En find by id permission repository {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"hola","description":"pepe"} {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+debug: Update permission service: Role regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"hola","description":"pepe"} {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+info: En update permission repository {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+debug: Respuesta de DB roleEntity {} {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"hola","description":"pepe"} {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"hola","description":"pepe"} {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+debug: Update permission Service: permission regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"hola","description":"pepe"} {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+debug: permission enviado por permissionService {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"hola","description":"pepe"} {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+info: ::1 - - [16/Nov/2023:04:42:24 +0000] "PUT /permission/8743b468-795a-4aeb-875b-a3a7285c3f4d HTTP/1.1" 201 80 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:42:24 -0400"}
+info: Dentro de update role controller {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+info: En update permission service {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+info: En find by id permission repository {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"adios","description":"pepe"} {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+debug: Update permission service: Role regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"adios","description":"pepe"} {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+info: En update permission repository {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+debug: Respuesta de DB roleEntity {} {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"adios","description":"pepe"} {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+debug: Respuesta de DB:{"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"adios2","description":"pepe"} {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+debug: Update permission Service: permission regresado por repository {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"adios2","description":"pepe"} {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+debug: permission enviado por permissionService {"id":"8743b468-795a-4aeb-875b-a3a7285c3f4d","name":"adios2","description":"pepe"} {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+info: ::1 - - [16/Nov/2023:04:47:56 +0000] "PUT /permission/8743b468-795a-4aeb-875b-a3a7285c3f4d HTTP/1.1" 201 82 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:47:56 -0400"}
+info: Dentro de update user controller {"timestamp":"16/Nov/2023:00:49:24 -0400"}
+info: En update user service {"timestamp":"16/Nov/2023:00:49:24 -0400"}
+info: En find by id user repository {"timestamp":"16/Nov/2023:00:49:24 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:49:24 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:49:24 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:00:49:24 -0400","username":"gwen"}
+info: ::1 - - [16/Nov/2023:04:49:24 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:49:24 -0400"}
+info: Dentro de create user controller {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+info: En find by id role repository {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+debug: Respuesta de DB:{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"} {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+info: En create user repository {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+debug: Respuesta de DB userEntity {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.393Z","lastLogin":null,"roleId":{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"}} {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+debug: Respuesta de DB userResponse {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.393Z","lastLogin":null,"roleId":{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"}} {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+debug: Create user Service: Usuario regresado por repository {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.393Z","lastLogin":null,"roleId":{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"}} {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+debug: Usuario enviado por userService {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","lastLogin":null} {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+info: ::1 - - [16/Nov/2023:04:52:05 +0000] "POST /users/ HTTP/1.1" 201 106 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:52:05 -0400"}
+info: Dentro de update user controller {"timestamp":"16/Nov/2023:00:52:34 -0400"}
+info: En update user service {"timestamp":"16/Nov/2023:00:52:34 -0400"}
+info: En find by id user repository {"timestamp":"16/Nov/2023:00:52:34 -0400"}
+debug: Respuesta de DB:{"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:52:34 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:52:34 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:00:52:34 -0400","username":"gwen"}
+info: ::1 - - [16/Nov/2023:04:52:34 +0000] "PUT /users/15a34c11-63e5-4181-b011-344ff8d1cdb6 HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:52:34 -0400"}
+info: Dentro de update user controller {"timestamp":"16/Nov/2023:00:56:03 -0400"}
+info: En update user service {"timestamp":"16/Nov/2023:00:56:03 -0400"}
+info: En find by id user repository {"timestamp":"16/Nov/2023:00:56:03 -0400"}
+debug: Respuesta de DB:{"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:56:03 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:56:03 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:00:56:03 -0400","username":"gwen"}
+info: ::1 - - [16/Nov/2023:04:56:03 +0000] "PUT /users/15a34c11-63e5-4181-b011-344ff8d1cdb6 HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:56:03 -0400"}
+info: Dentro de update user controller {"timestamp":"16/Nov/2023:00:59:35 -0400"}
+info: En update user service {"timestamp":"16/Nov/2023:00:59:35 -0400"}
+info: En find by id user repository {"timestamp":"16/Nov/2023:00:59:35 -0400"}
+debug: Respuesta de DB:{"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:59:35 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:00:59:35 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:00:59:35 -0400","username":"gwen"}
+info: ::1 - - [16/Nov/2023:04:59:35 +0000] "PUT /users/15a34c11-63e5-4181-b011-344ff8d1cdb6 HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:00:59:35 -0400"}
+info: Dentro de update user controller {"timestamp":"16/Nov/2023:01:03:02 -0400"}
+info: En update user service {"timestamp":"16/Nov/2023:01:03:02 -0400"}
+info: En find by id user repository {"timestamp":"16/Nov/2023:01:03:02 -0400"}
+debug: Respuesta de DB:{"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:03:02 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:03:02 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:01:03:02 -0400","username":"gwen"}
+info: ::1 - - [16/Nov/2023:05:03:02 +0000] "PUT /users/15a34c11-63e5-4181-b011-344ff8d1cdb6 HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:03:02 -0400"}
+info: Dentro de update user controller {"timestamp":"16/Nov/2023:01:04:42 -0400"}
+info: En update user service {"timestamp":"16/Nov/2023:01:04:42 -0400"}
+info: En find by id user repository {"timestamp":"16/Nov/2023:01:04:42 -0400"}
+debug: Respuesta de DB:{"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:04:42 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"15a34c11-63e5-4181-b011-344ff8d1cdb6","username":"juan","email":"juan1@gmail.com","passwordHash":"$2b$10$aySjSwTt1/TKtKbX7OcI0.yR6ofYXeb/kK9aMgd4yM0yo6Ph6y9me","createdAt":"2023-11-16T04:52:05.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:04:42 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:01:04:42 -0400","username":"gwen"}
+info: ::1 - - [16/Nov/2023:05:04:42 +0000] "PUT /users/15a34c11-63e5-4181-b011-344ff8d1cdb6 HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:04:42 -0400"}
+info: Dentro de create user controller {"timestamp":"16/Nov/2023:01:08:04 -0400"}
+info: En find by id role repository {"timestamp":"16/Nov/2023:01:08:04 -0400"}
+debug: Respuesta de DB:null {"timestamp":"16/Nov/2023:01:08:04 -0400"}
+error: Error al crear usuario: Error: Rol no encontrado {"email":"juan2@gmail.com","password":"juan","roleId":"2","timestamp":"16/Nov/2023:01:08:04 -0400","username":"juan"}
+info: ::1 - - [16/Nov/2023:05:08:04 +0000] "POST /users/ HTTP/1.1" 500 31 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:08:04 -0400"}
+info: En update user repository {"timestamp":"16/Nov/2023:01:15:29 -0400"}
+error: There is an error in the login process Property "token" was not found in "UserEntity". Make sure your query is correct. {"stack":"EntityPropertyNotFoundError: Property \"token\" was not found in \"UserEntity\". Make sure your query is correct.\n    at C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\UpdateQueryBuilder.ts:500:31\n    at Array.forEach (<anonymous>)\n    at UpdateQueryBuilder.createUpdateExpression (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\UpdateQueryBuilder.ts:493:68)\n    at UpdateQueryBuilder.getQuery (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\UpdateQueryBuilder.ts:53:21)\n    at UpdateQueryBuilder.getQueryAndParameters (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\QueryBuilder.ts:507:28)\n    at UpdateQueryBuilder.execute (C:\\Users\\FER\\Desktop\\backend\\Curso-Backend\\nodejs\\sql-app\\src\\query-builder\\UpdateQueryBuilder.ts:142:50)","timestamp":"16/Nov/2023:01:15:29 -0400"}
+info: ::1 - - [16/Nov/2023:05:15:29 +0000] "POST /auth/login HTTP/1.1" 400 98 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:15:29 -0400"}
+info: En update user repository {"timestamp":"16/Nov/2023:01:19:58 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:19:58 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":"2023-11-16T05:19:58.673Z","roleId":{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"}} {"timestamp":"16/Nov/2023:01:19:58 -0400"}
+info: ::1 - - [16/Nov/2023:05:19:58 +0000] "POST /auth/login HTTP/1.1" 200 330 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:19:58 -0400"}
+info: En update user repository {"timestamp":"16/Nov/2023:01:20:01 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:20:01 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":"2023-11-16T05:20:01.442Z","roleId":{"id":"08dc3687-6904-4b6e-ac4e-ca7a3771d0f3","name":"student","description":"Para estudiantes de Backend"}} {"timestamp":"16/Nov/2023:01:20:01 -0400"}
+info: ::1 - - [16/Nov/2023:05:20:01 +0000] "POST /auth/login HTTP/1.1" 200 330 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:20:01 -0400"}
+info: Dentro de update user controller {"timestamp":"16/Nov/2023:01:20:21 -0400"}
+info: En update user service {"timestamp":"16/Nov/2023:01:20:21 -0400"}
+info: En find by id user repository {"timestamp":"16/Nov/2023:01:20:21 -0400"}
+debug: Respuesta de DB:{"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:20:21 -0400"}
+debug: Update usr service: Usuario regresado por repository {"id":"8d2756ad-ca46-4f46-b919-f32bc98280ef","username":"juan","email":"juan@gmail.com","passwordHash":"$2b$10$eiLHvJ759ob0g.HWQstM0evQSlESmKJpcKbYwAbXibTM56T4vulc.","createdAt":"2023-11-16T03:13:06.000Z","lastLogin":null} {"timestamp":"16/Nov/2023:01:20:21 -0400"}
+error: Error al actualizar usuario: Error: Rol no encontrado {"timestamp":"16/Nov/2023:01:20:21 -0400","username":"gwen"}
+info: ::1 - - [16/Nov/2023:05:20:21 +0000] "PUT /users/8d2756ad-ca46-4f46-b919-f32bc98280ef HTTP/1.1" 400 14 "-" "PostmanRuntime/7.34.0" {"timestamp":"16/Nov/2023:01:20:21 -0400"}

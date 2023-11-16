@@ -1,3 +1,4 @@
+import { RoleEntity } from '../../infrastructure/entities/roleEntity';
 import { IRoleEntity } from '../entities/IRoleEntity';
 import { IUserEntity } from '../entities/IUserEntity';
 import { v4 as uuidv4 } from 'uuid';

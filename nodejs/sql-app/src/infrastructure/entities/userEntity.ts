@@ -21,7 +21,7 @@ export class UserEntity implements IUserEntity {
     @Column({ type: 'timestamp', nullable: true })
     lastLogin!: Date;
 
-    @ManyToOne(()=> RoleEntity)
+    @ManyToOne(() => RoleEntity)
     @JoinColumn({ name: 'roleId' })
-    roleId!: RoleEntity;
+    roleId: RoleEntity;
 }

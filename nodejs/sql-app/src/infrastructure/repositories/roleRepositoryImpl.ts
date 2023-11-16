@@ -17,6 +17,7 @@ export class RoleRepositoryImpl implements RoleRepository {
         logger.info("En create role repository")
 
         const roleEntity = AppDataSource.getRepository(RoleEntity).create({
+            id: role.id,
             name: role.name,
             description: role.description
         });
@@ -39,7 +40,7 @@ export class RoleRepositoryImpl implements RoleRepository {
         logger.debug(`Respuesta de DB roleEntity ${JSON.stringify(roleEntity)}`);
         const roleAux = await AppDataSource.getRepository(RoleEntity).findOneBy({ id });
         logger.debug(`Respuesta de DB:${JSON.stringify(roleAux)}`);
-        const roleResponse = AppDataSource.getRepository(RoleEntity).merge(roleAux);
+        const roleResponse = AppDataSource.getRepository(RoleEntity).merge(roleAux, role);
         logger.debug(`Respuesta de DB:${JSON.stringify(roleResponse)}`);
         return roleResponse? new Role({
             id: roleResponse.id,
