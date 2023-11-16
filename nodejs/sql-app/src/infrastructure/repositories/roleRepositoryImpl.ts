@@ -37,7 +37,9 @@ export class RoleRepositoryImpl implements RoleRepository {
         // TODO: set user values 
         const roleEntity = AppDataSource.getRepository(RoleEntity).update({id}, {name: role.name, description: role.description});
         logger.debug(`Respuesta de DB roleEntity ${JSON.stringify(roleEntity)}`);
-        const roleResponse = await AppDataSource.getRepository(RoleEntity).findOneBy({ id });
+        const roleAux = await AppDataSource.getRepository(RoleEntity).findOneBy({ id });
+        logger.debug(`Respuesta de DB:${JSON.stringify(roleAux)}`);
+        const roleResponse = AppDataSource.getRepository(RoleEntity).merge(roleAux);
         logger.debug(`Respuesta de DB:${JSON.stringify(roleResponse)}`);
         return roleResponse? new Role({
             id: roleResponse.id,
@@ -45,6 +47,7 @@ export class RoleRepositoryImpl implements RoleRepository {
             description: roleResponse.description
         }) : null;
     }
+    
     async deleteRole(id: string): Promise<DeleteResult> {
         logger.info("En delete role repository")
         const roleEntity = await AppDataSource.getRepository(RoleEntity).delete({ id });

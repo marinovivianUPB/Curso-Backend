@@ -42,7 +42,7 @@ export class UserController {
         } catch (error) {
             logger.error("Error al crear usuario: "+error, req.body);
             console.log(error);
-            return res.status(500).json({ message: error });
+            return res.status(500).json({ message: error.message });
         }
     }
 
@@ -74,7 +74,7 @@ export class UserController {
             logger.debug(`Usuario enviado por userService ${JSON.stringify(userDto)}`)
         }
 
-        res.json(userDto);
+        res.json({ message: 'Usuario eliminado exitosamente' });
     }
 
     public routes() {

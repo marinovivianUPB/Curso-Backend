@@ -8,23 +8,7 @@ import { DeleteResult } from "typeorm";
 import { UserAuthDto } from "../../app/dtos/auth.user.dto";
 
 export class UserRepositoryImpl implements UserRepository {
-    async userLoggedIn(user: UserAuthDto, id: string): Promise<User> {
-        logger.info("En user logged in repository")
-        // TODO: set user values 
-        const userEntity = AppDataSource.getRepository(UserEntity).update({id}, {lastLogin: user.lastLogin});
-        logger.debug(`Respuesta de DB userEntity ${JSON.stringify(userEntity)}`);
-        const userResponse = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
-        logger.debug(`Respuesta de DB:${JSON.stringify(userResponse)}`);
-        return userResponse? new User({
-            id: userResponse.id,
-            username: userResponse.username,
-            email: userResponse.email,
-            passwordHash: userResponse.passwordHash,
-            createdAt: userResponse.createdAt,
-            lastLogin: userResponse.lastLogin,
-            roleId: userResponse.roleId
-        }) : null;
-    }
+
     async deleteUser(id: string): Promise<DeleteResult> {
         logger.info("En delete user repository")
         const userEntity = await AppDataSource.getRepository(UserEntity).delete({ id });
@@ -37,6 +21,15 @@ export class UserRepositoryImpl implements UserRepository {
         const userEntity = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
         logger.debug(`Respuesta de DB:${JSON.stringify(userEntity)}`);
         return userEntity ? new User(userEntity) : null;
+    }
+
+    async findByEmail(email: string): Promise<User | null> {
+        const userRepository = AppDataSource.getRepository(UserEntity);
+        const user = await userRepository.findOne({
+            where: { email },
+            relations: ['role']
+        });
+        return user ? new User(user) : null;
     }
 
     async createUser(user: User): Promise<User> {
@@ -67,12 +60,14 @@ export class UserRepositoryImpl implements UserRepository {
         })
     }
 
-    async updateUser(user: UpdateUserDTO, id: string): Promise<User> {
+    async updateUser(user: User, id: string): Promise<User> {
         logger.info("En update user repository")
         // TODO: set user values 
-        const userEntity = AppDataSource.getRepository(UserEntity).update({id}, {username: user.username, email: user.email, roleId: user.roleId});
+        const userEntity = await AppDataSource.getRepository(UserEntity).update({id}, {username: user.username, email: user.email, passwordHash: user.passwordHash, roleId: user.roleId});
         logger.debug(`Respuesta de DB userEntity ${JSON.stringify(userEntity)}`);
-        const userResponse = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
+        const userAux = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
+        logger.debug(`Respuesta de DB:${JSON.stringify(userAux)}`);
+        const userResponse = AppDataSource.getRepository(UserEntity).merge(userAux);
         logger.debug(`Respuesta de DB:${JSON.stringify(userResponse)}`);
         return userResponse? new User({
             id: userResponse.id,
