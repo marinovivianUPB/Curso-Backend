@@ -7,6 +7,9 @@ import { UserRepositoryImpl } from '../../infrastructure/repositories/userReposi
 import { AuthController } from './authController';
 import { RoleController } from './roleController';
 import { UserController } from './userController';
+import { EncryptImpl } from '../../infrastructure/utils/encrypt.jwt';
+
+const encrypt = new EncryptImpl();
 
 const roleRepository = new RoleRepositoryImpl();
 const roleService = new RoleService(roleRepository);
@@ -14,7 +17,7 @@ const roleController = new RoleController(roleService);
 const userRepository = new UserRepositoryImpl();
 const userService = new UserService(userRepository, roleRepository);
 const userController = new UserController(userService);
-const authService = new AuthService(userRepository);
+const authService = new AuthService(userRepository, encrypt);
 const authController = new AuthController(authService);
 
 export function apiRoutes(): Router {
@@ -25,8 +28,4 @@ export function apiRoutes(): Router {
     router.use('/auth', authController.router);
 
     return router;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> aaa646fa8c6ce9b6c300222b93386f804fc0e67d
