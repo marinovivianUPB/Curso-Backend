@@ -5,8 +5,26 @@ import { User } from "../../domain/models/user";
 import logger from '../../infrastructure/logger/logger';
 import { UpdateUserDTO } from "../../app/dtos/update.user.dto";
 import { DeleteResult } from "typeorm";
+import { UserAuthDto } from "../../app/dtos/auth.user.dto";
 
 export class UserRepositoryImpl implements UserRepository {
+    async userLoggedIn(user: UserAuthDto, id: string): Promise<User> {
+        logger.info("En user logged in repository")
+        // TODO: set user values 
+        const userEntity = AppDataSource.getRepository(UserEntity).update({id}, {lastLogin: user.lastLogin});
+        logger.debug(`Respuesta de DB userEntity ${JSON.stringify(userEntity)}`);
+        const userResponse = await AppDataSource.getRepository(UserEntity).findOneBy({ id });
+        logger.debug(`Respuesta de DB:${JSON.stringify(userResponse)}`);
+        return userResponse? new User({
+            id: userResponse.id,
+            username: userResponse.username,
+            email: userResponse.email,
+            passwordHash: userResponse.passwordHash,
+            createdAt: userResponse.createdAt,
+            lastLogin: userResponse.lastLogin,
+            roleId: userResponse.roleId
+        }) : null;
+    }
     async deleteUser(id: string): Promise<DeleteResult> {
         logger.info("En delete user repository")
         const userEntity = await AppDataSource.getRepository(UserEntity).delete({ id });
