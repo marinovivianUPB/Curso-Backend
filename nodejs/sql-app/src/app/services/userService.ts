@@ -8,27 +8,54 @@ import { UserDto } from '../dtos/user.dto';
 import { UpdateUserDTO } from "../dtos/update.user.dto";
 import { DeletedDTO } from "../dtos/deleted";
 import { RoleEntity } from "../../infrastructure/entities/roleEntity";
+import { RedisCacheService } from "../../infrastructure/cache/redis.cache";
 
 export class UserService {
-    constructor(private userRepository: UserRepository, private roleRepository: RoleRepository) { }
+    constructor(private userRepository: UserRepository, private roleRepository: RoleRepository, private redisCacheService: RedisCacheService) { }
+
+    async getCache(userId: string){
+        const USER_KEY = 'USER';
+        const sol = await this.redisCacheService.get(`${USER_KEY}:${userId}`);
+        console.log(sol);
+        return sol;
+    }
+
+    setCache(userId: string, user: User){
+        const USER_KEY = 'USER';
+        this.redisCacheService.set(`${USER_KEY}:${userId}`, JSON.stringify(user));
+    }
 
     async getUserById(id: string): Promise<UserDto | null> {
+        const userCache = await this.getCache(id);
+        const userObject : User= JSON.parse(userCache);
+        if(!userObject){
+            logger.info("En get user by id service");
+            const user = await this.userRepository.findById(id);
+            if (!user){
+                return null
+            }
+            logger.debug(`Get usr service: Usuario regresado por repository ${JSON.stringify(user)}`);
 
-        logger.info("En get user by id service");
-        const user = await this.userRepository.findById(id);
-        if (!user){
-            return null
-        }
-        logger.debug(`Get usr service: Usuario regresado por repository ${JSON.stringify(user)}`);
 
-        const userResponse: UserDto = {
-            id: user.id,
-            username: user.username,
-            email: user.email,
-            lastLogin: user.lastLogin
+            const userResponse: UserDto = {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                lastLogin: user.lastLogin
+            }
+            this.setCache(user.id, user);
+            return userResponse;
+        } else{
+            const userReponse: UserDto = {
+                id: userObject.id,
+                username: userObject.username,
+                email: userObject.email,
+                lastLogin: userObject.lastLogin
+            }
+            return userReponse;
         }
-        // log.info user obtenido exitosamente
-        return userResponse;
+
+        
     }
 
     async createUser(userDto: CreateUserDTO): Promise<UserDto> {

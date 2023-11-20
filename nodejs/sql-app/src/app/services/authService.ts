@@ -11,18 +11,10 @@ import { RedisCacheService } from "../../infrastructure/cache/redis.cache";
 
 export class AuthService {
 
-    constructor(private userRepository: UserRepository, private encrypt: Encrypt, private redisCachService: RedisCacheService) {
+    constructor(private userRepository: UserRepository, private encrypt: Encrypt) {
         
     }
-
-    async getCache(){
-        const USER_KEY = 'USER';
-        const userID =1;
-        const ROLE_KEY="role";
-        const roleID=123;
-        const sol = await this.redisCachService.get(`${USER_KEY}:{userID}`);
-        console.log(sol);
-    }
+    
 
     async login(loginDTO: LoginDTO): Promise<UserAuthDto> {
         const userEntity: Partial<IUserEntity> = {
@@ -40,8 +32,7 @@ export class AuthService {
             logger.error(`La contraseña es incorrecta : ${userEntity.email}`);
             throw Error('El email o el password son incorrectos');
         }
-        const USER_KEY = 'USER';
-        this.redisCachService.set(`${USER_KEY}:${user.id}`, JSON.stringify(user));
+        
 
         const token = this.encrypt.encrypt({ userId: user.id });
 
