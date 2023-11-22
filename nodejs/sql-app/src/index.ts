@@ -15,6 +15,8 @@ import { AuthController } from './api/controllers/authController';
 import { AuthService } from './app/services/authService';
 import { apiRoutes } from './api/controllers/apiRoutes';
 import { EncryptImpl } from './infrastructure/utils/encrypt.jwt';
+import { RedisCacheService } from './infrastructure/cache/redis.cache';
+import { limiter } from './api/middleware/rate.limiter';
 
 AppDataSource.initialize().then(() => {
     const app = express();
@@ -23,6 +25,7 @@ AppDataSource.initialize().then(() => {
     const PORT = env.port;
 
     app.use(express.json());
+    app.use(limiter);
 
     // Setup Logger 
     app.use(morgan('combined', { stream: { write: (message: string) => logger.info(message.trim()) } }));
@@ -31,6 +34,7 @@ AppDataSource.initialize().then(() => {
         res.send('Servidor Up');
     });
     const encrypt = new EncryptImpl();
+    const cache = new RedisCacheService();
 
     const roleRepository = new RoleRepositoryImpl();
     const roleService = new RoleService(roleRepository);
@@ -38,7 +42,7 @@ AppDataSource.initialize().then(() => {
     const userRepository = new UserRepositoryImpl();
     const userService = new UserService(userRepository, roleRepository);
     const userController = new UserController(userService);
-    const authService = new AuthService(userRepository, encrypt);
+    const authService = new AuthService(userRepository, encrypt, cache);
     const authController = new AuthController(authService);
 
     
