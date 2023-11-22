@@ -6,6 +6,8 @@ import { AppDataSource } from "./infrastructure/config/dataSource";
 import logger from './infrastructure/logger/logger';
 import { env } from './infrastructure/config/config';
 import { apiRoutes } from './api/controllers/apiRoutes';
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec from './api/swagger/swaggerConfig';
 import { limiter } from './api/middleware/rate.limiter';
 
 AppDataSource.initialize().then(() => {
@@ -15,17 +17,22 @@ AppDataSource.initialize().then(() => {
     const PORT = env.port;
 
     app.use(express.json());
+    app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
     app.use(limiter);
     // Setup Logger 
     app.use(morgan('combined', { stream: { write: (message: string) => logger.info(message.trim()) } }));
+
+    
 
     app.get('/', (req: Request, res: Response) => {
         res.send('Servidor Up');
     });
 
-    app.use('/api', apiRoutes());
-
     app.listen(PORT, () => {
         console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
     });
+
+    apiRoutes(app);
+
+    
 }).catch(error => console.log(error));

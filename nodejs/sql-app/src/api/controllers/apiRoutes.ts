@@ -20,12 +20,12 @@ const roleController = new RoleController(roleService);
 const userRepository = new UserRepositoryImpl();
 const userService = new UserService(userRepository, roleRepository);
 const userController = new UserController(userService);
-const authService = new AuthService(userRepository, encrypt, redisCacheService);
+const authService = new AuthService(userRepository, encrypt);
 const authController = new AuthController(authService);
 
 const API:string = '/api';
 
-export const routes = (server: any) => {
+export const apiRoutes = (server : any) => {
     server.use(`${API}/users`, userController.router);
     server.use(`${API}/roles`, roleController.router);
     server.use(`${API}/auth`, authController.router);
