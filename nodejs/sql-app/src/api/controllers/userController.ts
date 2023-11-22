@@ -17,11 +17,67 @@ export class UserController {
         this.routes();
     }
 
+    /**
+     * @swagger
+     * /getUsers:
+     *   get:
+     *     summary: Devuelve todos los usuarios de SQL App
+     *     tags: [Users]
+     *     requestBody:
+     *       required: false
+     *     responses:
+     *       200:
+     *         description: Usuarios obtenidos exitosamente
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/ResponseUserCredentials'
+     *       400:
+     *         description: Error en la solicitud
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 message:
+     *                   type: string
+     *       401:
+     *         description: Credenciales inválidas
+     */
+
     // get all users
     public async getUsers(req: Request, res: Response): Promise<void> {
         const users: UserDto[] = await this.userService.getUsers();
         res.json(users);
     }
+
+    /**
+     * @swagger
+     * /users/[id]:
+     *   get:
+     *     summary: Devuelve el usuario especificado por id
+     *     tags: [Users]
+     *     requestBody:
+     *       required: false
+     *     responses:
+     *       200:
+     *         description: Usuario obtenido exitosamente
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/ResponseUserCredentials'
+     *       400:
+     *         description: Error en la solicitud
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 message:
+     *                   type: string
+     *       401:
+     *         description: Credenciales inválidas
+     */
 
     public async getUserById(req: Request, res: Response): Promise<void> {
         const { id } = req.params;
@@ -34,6 +90,38 @@ export class UserController {
 
         res.json(userDto);
     }
+
+    /**
+     * @swagger
+     * /users/:
+     *   post:
+     *     summary: Crea el usuario especificado
+     *     tags: [Users]
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             $ref: '#/components/schemas/CreateUserCredentials'
+     *     responses:
+     *       200:
+     *         description: Usuario creado exitosamente
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/ResponseUserCredentials'
+     *       400:
+     *         description: Error en la solicitud
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 message:
+     *                   type: string
+     *       401:
+     *         description: Credenciales inválidas
+     */
 
     public async createUser(req: Request, res: Response): Promise<Response> {
         try {
@@ -50,6 +138,37 @@ export class UserController {
         }
     }
 
+    /**
+     * @swagger
+     * /users/[id]:
+     *   delete:
+     *     summary: Elimina el usuario especificado por id
+     *     tags: [Users]
+     *     requestBody:
+     *       required: false
+     *     responses:
+     *       200:
+     *         description: Usuario eliminado exitosamente
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 message:
+     *                   type: string
+     *       400:
+     *         description: Error en la solicitud
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 message:
+     *                   type: string
+     *       401:
+     *         description: Credenciales inválidas
+     */
+
     public async deleteUser(req: Request, res: Response): Promise<Response> {
         const { userId } = req.params;
         try {
@@ -62,6 +181,38 @@ export class UserController {
             return res.status(500).json({ message: error });
         }
     }
+
+    /**
+     * @swagger
+     * /users/[id]:
+     *   put:
+     *     summary: Actualiza el usuario especificado por id
+     *     tags: [Users]
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             $ref: '#/components/schemas/UpdateUserCredentials'
+     *     responses:
+     *       200:
+     *         description: Usuario actualizado exitosamente
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/ResponseUserCredentials'
+     *       400:
+     *         description: Error en la solicitud
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 message:
+     *                   type: string
+     *       401:
+     *         description: Credenciales inválidas
+     */
 
     public async updateUser(req: Request, res: Response): Promise<Response> {
         const { userId } = req.params;
