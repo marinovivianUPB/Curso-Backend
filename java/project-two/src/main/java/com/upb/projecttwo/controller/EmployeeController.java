@@ -5,6 +5,8 @@ import com.upb.projecttwo.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
@@ -15,6 +17,16 @@ public class EmployeeController {
     @PostMapping
     public Employee save(@RequestBody Employee employee) {
         return employeeService.save(employee);
+    }
+
+    @GetMapping
+    public List<Employee> getEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
+    @DeleteMapping("/{id}")
+    public Employee deleteEmployeeById(@PathVariable String id){
+        return employeeService.deleteById(id);
     }
 
     @GetMapping("/{id}")
