@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
-public class EmployeeController {
+@RequestMapping("/v2/employees")
+public class EmployeeV2Controller {
 
-    @Qualifier("employeeServiceImpl")
+    @Qualifier("employeeV2ServiceImpl")
     @Autowired
     private EmployeeService employeeService;
 
@@ -35,4 +35,5 @@ public class EmployeeController {
     public Employee getEmployeeById(@PathVariable String id) {
         return employeeService.getEmployeeById(id);
     }
+
 }
