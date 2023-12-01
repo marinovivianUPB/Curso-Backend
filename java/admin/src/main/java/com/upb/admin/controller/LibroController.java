@@ -1,6 +1,8 @@
 package com.upb.admin.controller;
 
+import com.upb.admin.models.Libro;
 import com.upb.admin.models.User;
+import com.upb.admin.services.LibroService;
 import com.upb.admin.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,19 +11,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/libros")
+public class LibroController {
 
-    @Qualifier("userServiceImpl")
+    @Qualifier("libroServiceImpl")
     @Autowired
-    private UserService userService;
+    private LibroService libroService;
 
     @PostMapping
-    public User save(@RequestBody User employee) {
-        return userService.save(employee);
+    public Libro save(@RequestBody Libro libro) {
+        return libroService.save(libro);
     }
 
-    @GetMapping
+    /*@GetMapping
     public List<User> getEmployees(){
         return userService.getAll();
     }
@@ -34,5 +36,5 @@ public class UserController {
     @GetMapping("/{id}")
     public User getEmployeeById(@PathVariable String id) {
         return userService.getById(id);
-    }
+    }*/
 }
