@@ -1,4 +1,4 @@
-package com.upb.admin.error;
+package com.upb.admin.domain.error;
 
 public class UserNotFoundException extends RuntimeException{
 

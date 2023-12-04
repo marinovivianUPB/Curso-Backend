@@ -1,4 +1,4 @@
-package com.upb.admin.entity;
+package com.upb.admin.infrastructure.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

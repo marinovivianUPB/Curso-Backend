@@ -1,6 +1,6 @@
-package com.upb.admin.services;
+package com.upb.admin.app.services;
 
-import com.upb.admin.models.User;
+import com.upb.admin.domain.models.User;
 
 import java.util.List;
 

@@ -1,14 +1,12 @@
-package com.upb.admin.services;
+package com.upb.admin.app.services;
 
-import com.upb.admin.entity.UserEntity;
-import com.upb.admin.error.UserNotFoundException;
-import com.upb.admin.models.User;
-import com.upb.admin.repository.UserRepository;
+import com.upb.admin.infrastructure.entity.UserEntity;
+import com.upb.admin.domain.models.User;
+import com.upb.admin.domain.interfaces.UserRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 

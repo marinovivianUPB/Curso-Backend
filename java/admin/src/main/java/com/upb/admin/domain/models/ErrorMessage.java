@@ -1,4 +1,4 @@
-package com.upb.admin.models;
+package com.upb.admin.domain.models;
 
 import org.springframework.http.HttpStatus;
 

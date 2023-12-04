@@ -1,6 +1,6 @@
-package com.upb.admin.error;
+package com.upb.admin.domain.error;
 
-import com.upb.admin.models.ErrorMessage;
+import com.upb.admin.domain.models.ErrorMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
