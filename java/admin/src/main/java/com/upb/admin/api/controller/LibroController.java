@@ -1,14 +1,10 @@
-package com.upb.admin.controller;
+package com.upb.admin.api.controller;
 
-import com.upb.admin.models.Libro;
-import com.upb.admin.models.User;
-import com.upb.admin.services.LibroService;
-import com.upb.admin.services.UserService;
+import com.upb.admin.domain.models.Libro;
+import com.upb.admin.app.services.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/libros")

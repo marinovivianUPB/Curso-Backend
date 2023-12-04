@@ -1,12 +1,17 @@
-package com.upb.admin.models;
+package com.upb.admin.infrastructure.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-public class User {
+@Entity
+@Table(name="users")
+public class UserEntity {
 
+    @Id
     private String id;
     private String username;
-    @JsonIgnore
     private String password;
     private String email;
     private boolean admin;
