@@ -26,8 +26,6 @@ public class EmployeeV2ServiceImpl implements EmployeeService{
         employeeRepository.save(entity);
         return employee;
     }
-
-
     @Override
     public Employee getEmployeeById(String id) {
         EmployeeEntity employeeEntity = employeeRepository.findById(id).get();

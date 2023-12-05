@@ -21,6 +21,16 @@ public class EmployeeController {
         return employeeService.save(employee);
     }
 
+    @GetMapping
+    public List<Employee> getEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
+    @DeleteMapping("/{id}")
+    public Employee deleteEmployeeById(@PathVariable String id){
+        return employeeService.deleteById(id);
+    }
+
     @GetMapping("/{id}")
     public Employee getEmployeeById(@PathVariable String id) {
         return employeeService.getEmployeeById(id);
