@@ -16,24 +16,24 @@ public class EmployeeV2Controller {
     @Autowired
     private EmployeeService employeeService;
 
-    @PostMapping()
+    @PostMapping
     public Employee save(@RequestBody Employee employee) {
         return employeeService.save(employee);
     }
 
-    @GetMapping()
-    public List<Employee> getAll(){
-        return employeeService.getEmployees();
+    @GetMapping
+    public List<Employee> getEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
+    @DeleteMapping("/{id}")
+    public Employee deleteEmployeeById(@PathVariable String id){
+        return employeeService.deleteById(id);
     }
 
     @GetMapping("/{id}")
     public Employee getEmployeeById(@PathVariable String id) {
         return employeeService.getEmployeeById(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable String id) {
-        employeeService.delete(id);
     }
 
 }
