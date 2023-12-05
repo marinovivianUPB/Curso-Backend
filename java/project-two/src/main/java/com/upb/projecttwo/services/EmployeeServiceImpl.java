@@ -34,19 +34,18 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public List<Employee> getEmployees() {
+    public List<Employee> getAllEmployees() {
         return employeeList;
     }
 
     @Override
-    public String delete(String id) {
-        Employee employeeDeleted = employeeList
-                    .stream()
-                    .filter(employee -> employee.getEmployeId().equalsIgnoreCase(id))
-                    .findFirst()
-                    .orElseThrow(() -> new EmployeeNotFoundException("Employee not found with ID "+id));
-        employeeList.remove(employeeDeleted);
-        return "Employee deleted "+ id;
+    public Employee deleteById(String id) {
+        Employee toBeDeleted = employeeList.stream()
+                .filter(employee -> employee.getEmployeId().equalsIgnoreCase(id))
+                .findFirst()
+                .orElseThrow(() -> new EmployeeNotFoundException("Employee not found with ID "+id));
+        employeeList.remove(toBeDeleted);
+        return toBeDeleted;
     }
 
 

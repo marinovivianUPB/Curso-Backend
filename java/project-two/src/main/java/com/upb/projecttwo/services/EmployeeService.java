@@ -8,8 +8,7 @@ public interface EmployeeService {
     Employee save(Employee employee);
 
     Employee getEmployeeById(String id);
+    List<Employee> getAllEmployees();
 
-    List<Employee> getEmployees();
-
-    String delete(String id);
+    Employee deleteById(String id);
 }
